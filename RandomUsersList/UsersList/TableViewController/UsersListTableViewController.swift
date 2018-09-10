@@ -79,8 +79,8 @@ extension UsersListTableViewController: UITableViewDelegate {
 		
 		if offsetY > contentHeight - scrollView.frame.height,
 			!isLoadingMoreUsers {
+			print("UsersListTableViewController: Asking delegate to load more users")
 			isLoadingMoreUsers = true
-			tableView?.reloadSections(IndexSet(integer: 1), with: .none)
 			delegate?.loadMoreUsers()
 		}
 	}
@@ -96,7 +96,7 @@ extension UsersListTableViewController: UITableViewDataSource {
 		if section == 0 {
 			return users.count
 		} else {
-			return isLoadingMoreUsers ? 1 : 0
+			return 1
 		}
 	}
 	

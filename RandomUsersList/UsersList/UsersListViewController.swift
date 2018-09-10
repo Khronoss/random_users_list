@@ -59,9 +59,6 @@ class UsersListViewController: UIViewController {
 
 extension UsersListViewController: IUsersListTableViewControllerDelegate {
 	func loadMoreUsers() {
-		let sleepTime = DispatchTime.now() + .seconds(5)
-		DispatchQueue.global().asyncAfter(deadline: sleepTime) { [unowned self] () -> Void in
-			self.loadUsersList(pageIndex: self.currentPageIndex + 1)
-		}
+		loadUsersList(pageIndex: currentPageIndex + 1)
 	}
 }
