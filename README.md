@@ -1,7 +1,7 @@
 # random_users_list
 Shows a list of random users
 
-#Assessment
+# Assessment
 Build an app that fetch data from this service : https://api.randomuser.me (use https://randomuser.me/api/1.0/?seed=lydia&results=10&page=1 to get 10 contacts for each api call, and increase page param to load more results.
 The app must display result in a list of first names and last names, and the email under it.
 The app must handle connectivity issue, and display the last results received if it can't retrieve one at launch.
