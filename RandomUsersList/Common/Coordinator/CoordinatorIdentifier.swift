@@ -10,4 +10,5 @@ import Foundation
 
 enum CoordinatorIdentifier {
 	static let usersList = "usersList"
+	static let userDetails = "userDetails"
 }

@@ -14,6 +14,7 @@ class UsersListViewController: UIViewController {
 	let usersListService: IUsersListService
 	var tableViewController: IUsersListTableViewController
 	
+	var delegate: UserDetailsPresenter?
 	var currentPageIndex: Int = 0
 	
 	required init(usersListService: IUsersListService,
@@ -27,7 +28,7 @@ class UsersListViewController: UIViewController {
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
-		fatalError("Controller wasn't mean to be initialized from Storyboard")
+		fatalError("UsersListViewController wasn't mean to be initialized from Storyboard")
 	}
 	
     override func viewDidLoad() {
@@ -60,5 +61,11 @@ class UsersListViewController: UIViewController {
 extension UsersListViewController: IUsersListTableViewControllerDelegate {
 	func loadMoreUsers() {
 		loadUsersList(pageIndex: currentPageIndex + 1)
+	}
+	
+	func usersListController(_ controller: IUsersListTableViewController,
+							 didSelectUser user: User) {
+		print("User selected from list: \(user.name.fullName(withTitle: false))")
+		delegate?.presentUserDetails(user, from: self)
 	}
 }

@@ -18,7 +18,7 @@ protocol Coordinator: CoordinatorDelegate {
 	var delegate: CoordinatorDelegate? { get }
 	var controller: UIViewController? { get set }
 	
-	mutating func start(completion: (() -> Void)?)
+	mutating func start()
 }
 
 extension CoordinatorDelegate where Self: Coordinator {

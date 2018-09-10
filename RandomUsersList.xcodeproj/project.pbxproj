@@ -32,6 +32,14 @@
 		FAB3FA8C2146D5DE007B5C62 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB3FA8A2146D5DE007B5C62 /* UserTableViewCell.xib */; };
 		FAB3FA8F2146D9A5007B5C62 /* UserName.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3FA8E2146D9A5007B5C62 /* UserName.swift */; };
 		FAB3FA912146DA7B007B5C62 /* UserPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3FA902146DA7B007B5C62 /* UserPicture.swift */; };
+		FAB3FA942146E54A007B5C62 /* UserDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3FA932146E54A007B5C62 /* UserDetailsPresenter.swift */; };
+		FAB3FA9621470626007B5C62 /* UserDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3FA9521470625007B5C62 /* UserDetailsCoordinator.swift */; };
+		FAB3FA99214706BF007B5C62 /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3FA97214706BF007B5C62 /* UserDetailsViewController.swift */; };
+		FAB3FA9A214706BF007B5C62 /* UserDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB3FA98214706BF007B5C62 /* UserDetailsViewController.xib */; };
+		FAB3FA9D21470B0B007B5C62 /* UserDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3FA9C21470B0B007B5C62 /* UserDetailsTableViewController.swift */; };
+		FAB3FA9F21471125007B5C62 /* UserDetailsTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3FA9E21471125007B5C62 /* UserDetailsTableViewHeader.swift */; };
+		FAB3FAA121471148007B5C62 /* UserDetailsTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB3FAA021471148007B5C62 /* UserDetailsTableViewHeader.xib */; };
+		FAB3FAA3214716E7007B5C62 /* UIMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3FAA2214716E7007B5C62 /* UIMetric.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +86,14 @@
 		FAB3FA8A2146D5DE007B5C62 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		FAB3FA8E2146D9A5007B5C62 /* UserName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserName.swift; sourceTree = "<group>"; };
 		FAB3FA902146DA7B007B5C62 /* UserPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPicture.swift; sourceTree = "<group>"; };
+		FAB3FA932146E54A007B5C62 /* UserDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsPresenter.swift; sourceTree = "<group>"; };
+		FAB3FA9521470625007B5C62 /* UserDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsCoordinator.swift; sourceTree = "<group>"; };
+		FAB3FA97214706BF007B5C62 /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
+		FAB3FA98214706BF007B5C62 /* UserDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailsViewController.xib; sourceTree = "<group>"; };
+		FAB3FA9C21470B0B007B5C62 /* UserDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsTableViewController.swift; sourceTree = "<group>"; };
+		FAB3FA9E21471125007B5C62 /* UserDetailsTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsTableViewHeader.swift; sourceTree = "<group>"; };
+		FAB3FAA021471148007B5C62 /* UserDetailsTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailsTableViewHeader.xib; sourceTree = "<group>"; };
+		FAB3FAA2214716E7007B5C62 /* UIMetric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMetric.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,8 +159,9 @@
 		FAB3FA412146B3BB007B5C62 /* RandomUsersList */ = {
 			isa = PBXGroup;
 			children = (
-				FAB3FA732146C6F4007B5C62 /* Models */,
+				FAB3FA922146E53B007B5C62 /* UserDetails */,
 				FAB3FA622146B89D007B5C62 /* UsersList */,
+				FAB3FA732146C6F4007B5C62 /* Models */,
 				FAB3FA692146B98D007B5C62 /* Common */,
 				FAB3FA632146B8AA007B5C62 /* AppDelegate */,
 				FAB3FA642146B8C3007B5C62 /* Resources */,
@@ -196,6 +213,7 @@
 			children = (
 				FAB3FA822146D492007B5C62 /* Coordinator */,
 				FAB3FA832146D4A5007B5C62 /* ReusableViewIdentification */,
+				FAB3FAA2214716E7007B5C62 /* UIMetric.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -257,6 +275,28 @@
 				FAB3FA902146DA7B007B5C62 /* UserPicture.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		FAB3FA922146E53B007B5C62 /* UserDetails */ = {
+			isa = PBXGroup;
+			children = (
+				FAB3FA9B21470AEF007B5C62 /* TableViewController */,
+				FAB3FA932146E54A007B5C62 /* UserDetailsPresenter.swift */,
+				FAB3FA9521470625007B5C62 /* UserDetailsCoordinator.swift */,
+				FAB3FA97214706BF007B5C62 /* UserDetailsViewController.swift */,
+				FAB3FA98214706BF007B5C62 /* UserDetailsViewController.xib */,
+			);
+			path = UserDetails;
+			sourceTree = "<group>";
+		};
+		FAB3FA9B21470AEF007B5C62 /* TableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FAB3FA9C21470B0B007B5C62 /* UserDetailsTableViewController.swift */,
+				FAB3FA9E21471125007B5C62 /* UserDetailsTableViewHeader.swift */,
+				FAB3FAA021471148007B5C62 /* UserDetailsTableViewHeader.xib */,
+			);
+			path = TableViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,9 +385,11 @@
 			files = (
 				FAB3FA4D2146B3BD007B5C62 /* LaunchScreen.storyboard in Resources */,
 				FAB3FA4A2146B3BD007B5C62 /* Assets.xcassets in Resources */,
+				FAB3FA9A214706BF007B5C62 /* UserDetailsViewController.xib in Resources */,
 				FAB3FA882146D56D007B5C62 /* LoadingTableViewCell.xib in Resources */,
 				FAB3FA682146B8FE007B5C62 /* UsersListViewController.xib in Resources */,
 				FAB3FA8C2146D5DE007B5C62 /* UserTableViewCell.xib in Resources */,
+				FAB3FAA121471148007B5C62 /* UserDetailsTableViewHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,17 +469,23 @@
 				FAB3FA672146B8FE007B5C62 /* UsersListViewController.swift in Sources */,
 				FAB3FA812146D482007B5C62 /* ReusableViewIdentification.swift in Sources */,
 				FAB3FA8B2146D5DE007B5C62 /* UserTableViewCell.swift in Sources */,
+				FAB3FA9D21470B0B007B5C62 /* UserDetailsTableViewController.swift in Sources */,
+				FAB3FAA3214716E7007B5C62 /* UIMetric.swift in Sources */,
 				FAB3FA772146C771007B5C62 /* UsersListNetworkLayer.swift in Sources */,
 				FAB3FA6B2146B9A0007B5C62 /* Coordinator.swift in Sources */,
 				FAB3FA7B2146C99B007B5C62 /* PaginatedEnveloppeInformation.swift in Sources */,
 				FAB3FA722146C66E007B5C62 /* UsersListService.swift in Sources */,
 				FAB3FA8F2146D9A5007B5C62 /* UserName.swift in Sources */,
+				FAB3FA99214706BF007B5C62 /* UserDetailsViewController.swift in Sources */,
+				FAB3FA9F21471125007B5C62 /* UserDetailsTableViewHeader.swift in Sources */,
 				FAB3FA7F2146D409007B5C62 /* UITableView+ReusableViewIdentification.swift in Sources */,
 				FAB3FA912146DA7B007B5C62 /* UserPicture.swift in Sources */,
 				FAB3FA6D2146BC00007B5C62 /* UsersListCoordinator.swift in Sources */,
 				FAB3FA872146D56D007B5C62 /* LoadingTableViewCell.swift in Sources */,
 				FAB3FA7D2146D2FA007B5C62 /* UsersListTableViewController.swift in Sources */,
 				FAB3FA752146C6FD007B5C62 /* User.swift in Sources */,
+				FAB3FA9621470626007B5C62 /* UserDetailsCoordinator.swift in Sources */,
+				FAB3FA942146E54A007B5C62 /* UserDetailsPresenter.swift in Sources */,
 				FAB3FA792146C94C007B5C62 /* PaginatedEnveloppe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

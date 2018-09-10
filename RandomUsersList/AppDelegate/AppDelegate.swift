@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func initRootCoordinator() {
 		var coordinator = UsersListCoordinator(window: window)
 		
-		coordinator.start(completion: nil)
+		coordinator.start()
 		rootCoordinator = coordinator
 	}
 	

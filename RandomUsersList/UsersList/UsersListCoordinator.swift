@@ -14,7 +14,7 @@ struct UsersListCoordinator {
 	var delegate: CoordinatorDelegate?
 	var controller: UIViewController?
 	
-	private var window: UIWindow?
+	private weak var window: UIWindow?
 	
 	init(window: UIWindow?) {
 		self.window = window
@@ -22,7 +22,7 @@ struct UsersListCoordinator {
 }
 
 extension UsersListCoordinator: Coordinator {
-	mutating func start(completion: (() -> Void)?) {
+	mutating func start() {
 		let networkLayer = UsersListNetworkLayer()
 		let usersListService = UsersListService(networkLayer: networkLayer)
 		let tableController = UsersListTableViewController()
@@ -30,8 +30,11 @@ extension UsersListCoordinator: Coordinator {
 												 tableViewController: tableController)
 
 		self.controller = controller
+		controller.delegate = self
 		
 		window?.rootViewController = controller
 		window?.makeKeyAndVisible()
 	}
 }
+
+extension UsersListCoordinator: UserDetailsPresenter {}

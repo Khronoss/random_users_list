@@ -10,6 +10,8 @@ import UIKit
 
 protocol IUsersListTableViewControllerDelegate {
 	func loadMoreUsers()
+	func usersListController(_ controller: IUsersListTableViewController,
+							 didSelectUser user: User)
 }
 
 protocol IUsersListTableViewController {
@@ -71,6 +73,8 @@ extension UsersListTableViewController: UITableViewDelegate {
 				   didSelectRowAt indexPath: IndexPath) {
 		let user = users[indexPath.row]
 		
+		delegate?.usersListController(self,
+									  didSelectUser: user)
 	}
 	
 	func scrollViewDidScroll(_ scrollView: UIScrollView) {
