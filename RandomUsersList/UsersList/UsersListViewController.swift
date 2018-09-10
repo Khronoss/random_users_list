@@ -22,6 +22,8 @@ class UsersListViewController: UIViewController {
 		self.tableViewController = tableViewController
 
 		super.init(nibName: nil, bundle: nil)
+		
+		self.tableViewController.delegate = self
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
@@ -51,6 +53,15 @@ class UsersListViewController: UIViewController {
 			} else {
 				self.tableViewController.users += usersList
 			}
+		}
+	}
+}
+
+extension UsersListViewController: IUsersListTableViewControllerDelegate {
+	func loadMoreUsers() {
+		let sleepTime = DispatchTime.now() + .seconds(5)
+		DispatchQueue.global().asyncAfter(deadline: sleepTime) { [unowned self] () -> Void in
+			self.loadUsersList(pageIndex: self.currentPageIndex + 1)
 		}
 	}
 }

@@ -10,6 +10,12 @@ import UIKit
 
 class LoadingTableViewCell: UITableViewCell {
 	@IBOutlet weak var loader: UIActivityIndicatorView!
+	
+	override func awakeFromNib() {
+		super.awakeFromNib()
+		
+		loader.startAnimating()
+	}
 }
 
 extension LoadingTableViewCell: ReusableViewIdentification {}
