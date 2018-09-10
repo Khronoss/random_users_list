@@ -10,11 +10,14 @@
 		25AE6345886CC1D45F80E39B /* Pods_RandomUsersList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C857041114B4C73A1588E963 /* Pods_RandomUsersList.framework */; };
 		7829EA62B51E4DD81409CFF2 /* Pods_RandomUsersListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01FC5F7957B927D87AE459D /* Pods_RandomUsersListTests.framework */; };
 		FAB3FA432146B3BB007B5C62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3FA422146B3BB007B5C62 /* AppDelegate.swift */; };
-		FAB3FA452146B3BB007B5C62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3FA442146B3BB007B5C62 /* ViewController.swift */; };
-		FAB3FA482146B3BB007B5C62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB3FA462146B3BB007B5C62 /* Main.storyboard */; };
 		FAB3FA4A2146B3BD007B5C62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB3FA492146B3BD007B5C62 /* Assets.xcassets */; };
 		FAB3FA4D2146B3BD007B5C62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB3FA4B2146B3BD007B5C62 /* LaunchScreen.storyboard */; };
 		FAB3FA582146B3BD007B5C62 /* RandomUsersListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3FA572146B3BD007B5C62 /* RandomUsersListTests.swift */; };
+		FAB3FA672146B8FE007B5C62 /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3FA652146B8FE007B5C62 /* UsersListViewController.swift */; };
+		FAB3FA682146B8FE007B5C62 /* UsersListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB3FA662146B8FE007B5C62 /* UsersListViewController.xib */; };
+		FAB3FA6B2146B9A0007B5C62 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3FA6A2146B9A0007B5C62 /* Coordinator.swift */; };
+		FAB3FA6D2146BC00007B5C62 /* UsersListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3FA6C2146BC00007B5C62 /* UsersListCoordinator.swift */; };
+		FAB3FA6F2146BCED007B5C62 /* CoordinatorIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3FA6E2146BCED007B5C62 /* CoordinatorIdentifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,14 +39,17 @@
 		C857041114B4C73A1588E963 /* Pods_RandomUsersList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RandomUsersList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB3FA3F2146B3BB007B5C62 /* RandomUsersList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomUsersList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB3FA422146B3BB007B5C62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FAB3FA442146B3BB007B5C62 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FAB3FA472146B3BB007B5C62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAB3FA492146B3BD007B5C62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAB3FA4C2146B3BD007B5C62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAB3FA4E2146B3BD007B5C62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAB3FA532146B3BD007B5C62 /* RandomUsersListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomUsersListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB3FA572146B3BD007B5C62 /* RandomUsersListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUsersListTests.swift; sourceTree = "<group>"; };
 		FAB3FA592146B3BD007B5C62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAB3FA652146B8FE007B5C62 /* UsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewController.swift; sourceTree = "<group>"; };
+		FAB3FA662146B8FE007B5C62 /* UsersListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersListViewController.xib; sourceTree = "<group>"; };
+		FAB3FA6A2146B9A0007B5C62 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		FAB3FA6C2146BC00007B5C62 /* UsersListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListCoordinator.swift; sourceTree = "<group>"; };
+		FAB3FA6E2146BCED007B5C62 /* CoordinatorIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorIdentifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,12 +115,10 @@
 		FAB3FA412146B3BB007B5C62 /* RandomUsersList */ = {
 			isa = PBXGroup;
 			children = (
-				FAB3FA422146B3BB007B5C62 /* AppDelegate.swift */,
-				FAB3FA442146B3BB007B5C62 /* ViewController.swift */,
-				FAB3FA462146B3BB007B5C62 /* Main.storyboard */,
-				FAB3FA492146B3BD007B5C62 /* Assets.xcassets */,
-				FAB3FA4B2146B3BD007B5C62 /* LaunchScreen.storyboard */,
-				FAB3FA4E2146B3BD007B5C62 /* Info.plist */,
+				FAB3FA622146B89D007B5C62 /* UsersList */,
+				FAB3FA692146B98D007B5C62 /* Common */,
+				FAB3FA632146B8AA007B5C62 /* AppDelegate */,
+				FAB3FA642146B8C3007B5C62 /* Resources */,
 			);
 			path = RandomUsersList;
 			sourceTree = "<group>";
@@ -126,6 +130,43 @@
 				FAB3FA592146B3BD007B5C62 /* Info.plist */,
 			);
 			path = RandomUsersListTests;
+			sourceTree = "<group>";
+		};
+		FAB3FA622146B89D007B5C62 /* UsersList */ = {
+			isa = PBXGroup;
+			children = (
+				FAB3FA6C2146BC00007B5C62 /* UsersListCoordinator.swift */,
+				FAB3FA652146B8FE007B5C62 /* UsersListViewController.swift */,
+				FAB3FA662146B8FE007B5C62 /* UsersListViewController.xib */,
+			);
+			path = UsersList;
+			sourceTree = "<group>";
+		};
+		FAB3FA632146B8AA007B5C62 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				FAB3FA422146B3BB007B5C62 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		FAB3FA642146B8C3007B5C62 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FAB3FA492146B3BD007B5C62 /* Assets.xcassets */,
+				FAB3FA4B2146B3BD007B5C62 /* LaunchScreen.storyboard */,
+				FAB3FA4E2146B3BD007B5C62 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FAB3FA692146B98D007B5C62 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				FAB3FA6A2146B9A0007B5C62 /* Coordinator.swift */,
+				FAB3FA6E2146BCED007B5C62 /* CoordinatorIdentifier.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,7 +254,7 @@
 			files = (
 				FAB3FA4D2146B3BD007B5C62 /* LaunchScreen.storyboard in Resources */,
 				FAB3FA4A2146B3BD007B5C62 /* Assets.xcassets in Resources */,
-				FAB3FA482146B3BB007B5C62 /* Main.storyboard in Resources */,
+				FAB3FA682146B8FE007B5C62 /* UsersListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,15 +273,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-RandomUsersListTests-checkManifestLockResult.txt",
 			);
@@ -254,15 +291,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-RandomUsersList-checkManifestLockResult.txt",
 			);
@@ -278,8 +311,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAB3FA452146B3BB007B5C62 /* ViewController.swift in Sources */,
 				FAB3FA432146B3BB007B5C62 /* AppDelegate.swift in Sources */,
+				FAB3FA6F2146BCED007B5C62 /* CoordinatorIdentifier.swift in Sources */,
+				FAB3FA672146B8FE007B5C62 /* UsersListViewController.swift in Sources */,
+				FAB3FA6B2146B9A0007B5C62 /* Coordinator.swift in Sources */,
+				FAB3FA6D2146BC00007B5C62 /* UsersListCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,14 +338,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FAB3FA462146B3BB007B5C62 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FAB3FA472146B3BB007B5C62 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FAB3FA4B2146B3BD007B5C62 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -442,7 +470,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JQSW558QPZ;
-				INFOPLIST_FILE = RandomUsersList/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/RandomUsersList/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -461,7 +490,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JQSW558QPZ;
-				INFOPLIST_FILE = RandomUsersList/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/RandomUsersList/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
