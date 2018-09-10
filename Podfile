@@ -6,7 +6,8 @@ target 'RandomUsersList' do
   use_frameworks!
 
   # Pods for RandomUsersList
-
+  pod 'Alamofire', '~> 4.7.2'
+  
   target 'RandomUsersListTests' do
     inherit! :search_paths
     # Pods for testing

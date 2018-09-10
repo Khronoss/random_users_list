@@ -23,7 +23,10 @@ struct UsersListCoordinator {
 
 extension UsersListCoordinator: Coordinator {
 	mutating func start(completion: (() -> Void)?) {
-		let controller = UsersListViewController()
+		let networkLayer = UsersListNetworkLayer()
+		let usersListService = UsersListService(networkLayer: networkLayer)
+		let controller = UsersListViewController(usersListService: usersListService)
+
 		self.controller = controller
 		
 		window?.rootViewController = controller

@@ -9,7 +9,12 @@
 import UIKit
 
 class UsersListViewController: UIViewController {
-	required init() {
+	let usersListService: IUsersListService
+	var currentPageIndex: Int = 0
+	
+	required init(usersListService: IUsersListService) {
+		self.usersListService = usersListService
+
 		super.init(nibName: nil, bundle: nil)
 	}
 	
@@ -20,6 +25,20 @@ class UsersListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+		loadUsersList(pageIndex: 1)
     }
+	
+	func loadUsersList(pageIndex: Int) {
+		currentPageIndex = pageIndex
+		
+		usersListService.getUsersList(forPage: currentPageIndex) { (users, error) in
+			if let error = error {
+				print("Failed loading User's list")
+				print(error)
+				return
+			}
+			
+			print("Loaded Users list")
+		}
+	}
 }

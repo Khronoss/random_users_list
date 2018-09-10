@@ -18,6 +18,11 @@
 		FAB3FA6B2146B9A0007B5C62 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3FA6A2146B9A0007B5C62 /* Coordinator.swift */; };
 		FAB3FA6D2146BC00007B5C62 /* UsersListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3FA6C2146BC00007B5C62 /* UsersListCoordinator.swift */; };
 		FAB3FA6F2146BCED007B5C62 /* CoordinatorIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3FA6E2146BCED007B5C62 /* CoordinatorIdentifier.swift */; };
+		FAB3FA722146C66E007B5C62 /* UsersListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3FA712146C66E007B5C62 /* UsersListService.swift */; };
+		FAB3FA752146C6FD007B5C62 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3FA742146C6FD007B5C62 /* User.swift */; };
+		FAB3FA772146C771007B5C62 /* UsersListNetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3FA762146C771007B5C62 /* UsersListNetworkLayer.swift */; };
+		FAB3FA792146C94C007B5C62 /* PaginatedEnveloppe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3FA782146C94C007B5C62 /* PaginatedEnveloppe.swift */; };
+		FAB3FA7B2146C99B007B5C62 /* PaginatedEnveloppeInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3FA7A2146C99B007B5C62 /* PaginatedEnveloppeInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +55,11 @@
 		FAB3FA6A2146B9A0007B5C62 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		FAB3FA6C2146BC00007B5C62 /* UsersListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListCoordinator.swift; sourceTree = "<group>"; };
 		FAB3FA6E2146BCED007B5C62 /* CoordinatorIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorIdentifier.swift; sourceTree = "<group>"; };
+		FAB3FA712146C66E007B5C62 /* UsersListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListService.swift; sourceTree = "<group>"; };
+		FAB3FA742146C6FD007B5C62 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FAB3FA762146C771007B5C62 /* UsersListNetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListNetworkLayer.swift; sourceTree = "<group>"; };
+		FAB3FA782146C94C007B5C62 /* PaginatedEnveloppe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginatedEnveloppe.swift; sourceTree = "<group>"; };
+		FAB3FA7A2146C99B007B5C62 /* PaginatedEnveloppeInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginatedEnveloppeInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +125,7 @@
 		FAB3FA412146B3BB007B5C62 /* RandomUsersList */ = {
 			isa = PBXGroup;
 			children = (
+				FAB3FA732146C6F4007B5C62 /* Models */,
 				FAB3FA622146B89D007B5C62 /* UsersList */,
 				FAB3FA692146B98D007B5C62 /* Common */,
 				FAB3FA632146B8AA007B5C62 /* AppDelegate */,
@@ -135,6 +146,7 @@
 		FAB3FA622146B89D007B5C62 /* UsersList */ = {
 			isa = PBXGroup;
 			children = (
+				FAB3FA702146C660007B5C62 /* Service */,
 				FAB3FA6C2146BC00007B5C62 /* UsersListCoordinator.swift */,
 				FAB3FA652146B8FE007B5C62 /* UsersListViewController.swift */,
 				FAB3FA662146B8FE007B5C62 /* UsersListViewController.xib */,
@@ -169,6 +181,25 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		FAB3FA702146C660007B5C62 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FAB3FA712146C66E007B5C62 /* UsersListService.swift */,
+				FAB3FA762146C771007B5C62 /* UsersListNetworkLayer.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		FAB3FA732146C6F4007B5C62 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FAB3FA742146C6FD007B5C62 /* User.swift */,
+				FAB3FA782146C94C007B5C62 /* PaginatedEnveloppe.swift */,
+				FAB3FA7A2146C99B007B5C62 /* PaginatedEnveloppeInformation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -180,6 +211,7 @@
 				FAB3FA3B2146B3BB007B5C62 /* Sources */,
 				FAB3FA3C2146B3BB007B5C62 /* Frameworks */,
 				FAB3FA3D2146B3BB007B5C62 /* Resources */,
+				D1B9D0D1080B7ACDAEF7A50D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -304,6 +336,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D1B9D0D1080B7ACDAEF7A50D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RandomUsersList/Pods-RandomUsersList-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RandomUsersList/Pods-RandomUsersList-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -314,8 +364,13 @@
 				FAB3FA432146B3BB007B5C62 /* AppDelegate.swift in Sources */,
 				FAB3FA6F2146BCED007B5C62 /* CoordinatorIdentifier.swift in Sources */,
 				FAB3FA672146B8FE007B5C62 /* UsersListViewController.swift in Sources */,
+				FAB3FA772146C771007B5C62 /* UsersListNetworkLayer.swift in Sources */,
 				FAB3FA6B2146B9A0007B5C62 /* Coordinator.swift in Sources */,
+				FAB3FA7B2146C99B007B5C62 /* PaginatedEnveloppeInformation.swift in Sources */,
+				FAB3FA722146C66E007B5C62 /* UsersListService.swift in Sources */,
 				FAB3FA6D2146BC00007B5C62 /* UsersListCoordinator.swift in Sources */,
+				FAB3FA752146C6FD007B5C62 /* User.swift in Sources */,
+				FAB3FA792146C94C007B5C62 /* PaginatedEnveloppe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
