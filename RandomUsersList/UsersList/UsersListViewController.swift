@@ -9,11 +9,17 @@
 import UIKit
 
 class UsersListViewController: UIViewController {
+	@IBOutlet weak var tableView: UITableView!
+	
 	let usersListService: IUsersListService
+	var tableViewController: IUsersListTableViewController
+	
 	var currentPageIndex: Int = 0
 	
-	required init(usersListService: IUsersListService) {
+	required init(usersListService: IUsersListService,
+				  tableViewController: IUsersListTableViewController) {
 		self.usersListService = usersListService
+		self.tableViewController = tableViewController
 
 		super.init(nibName: nil, bundle: nil)
 	}
@@ -25,6 +31,7 @@ class UsersListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+		tableViewController.tableView = tableView
 		loadUsersList(pageIndex: 1)
     }
 	
@@ -32,13 +39,18 @@ class UsersListViewController: UIViewController {
 		currentPageIndex = pageIndex
 		
 		usersListService.getUsersList(forPage: currentPageIndex) { (users, error) in
-			if let error = error {
+			guard let usersList = users else {
 				print("Failed loading User's list")
-				print(error)
+				print(error!)
 				return
 			}
 			
 			print("Loaded Users list")
+			if pageIndex == 0 {
+				self.tableViewController.users = usersList
+			} else {
+				self.tableViewController.users += usersList
+			}
 		}
 	}
 }

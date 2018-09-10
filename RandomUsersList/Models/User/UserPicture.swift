@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  UserPicture.swift
 //  RandomUsersList
 //
 //  Created by Anthony Merle on 10/09/2018.
@@ -8,6 +8,8 @@
 
 import Foundation
 
-struct User: Decodable {
-	
+struct UserPicture: Decodable {
+	let large: URL
+	let medium: URL
+	let thumbnail: URL
 }

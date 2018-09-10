@@ -25,7 +25,9 @@ extension UsersListCoordinator: Coordinator {
 	mutating func start(completion: (() -> Void)?) {
 		let networkLayer = UsersListNetworkLayer()
 		let usersListService = UsersListService(networkLayer: networkLayer)
-		let controller = UsersListViewController(usersListService: usersListService)
+		let tableController = UsersListTableViewController()
+		let controller = UsersListViewController(usersListService: usersListService,
+												 tableViewController: tableController)
 
 		self.controller = controller
 		
