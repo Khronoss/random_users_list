@@ -10,4 +10,6 @@ import UIKit
 
 enum UIMetric {
 	static let tableViewHeaderHeight: CGFloat = 100
+	static let defaultSpacing: CGFloat = 20
+	static let defaultSpacingSmall: CGFloat = 10
 }

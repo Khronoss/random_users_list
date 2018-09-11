@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		25AE6345886CC1D45F80E39B /* Pods_RandomUsersList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C857041114B4C73A1588E963 /* Pods_RandomUsersList.framework */; };
 		7829EA62B51E4DD81409CFF2 /* Pods_RandomUsersListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01FC5F7957B927D87AE459D /* Pods_RandomUsersListTests.framework */; };
+		FA8068122147DA3E0093CEB0 /* UserDetailsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8068112147DA3E0093CEB0 /* UserDetailsSection.swift */; };
+		FA8068142147DCDC0093CEB0 /* UserDetailsSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8068132147DCDC0093CEB0 /* UserDetailsSectionHeaderView.swift */; };
+		FA8068172147E0FA0093CEB0 /* UserDetailsRowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8068152147E0FA0093CEB0 /* UserDetailsRowTableViewCell.swift */; };
+		FA8068182147E0FA0093CEB0 /* UserDetailsRowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA8068162147E0FA0093CEB0 /* UserDetailsRowTableViewCell.xib */; };
 		FAB3FA432146B3BB007B5C62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3FA422146B3BB007B5C62 /* AppDelegate.swift */; };
 		FAB3FA4A2146B3BD007B5C62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB3FA492146B3BD007B5C62 /* Assets.xcassets */; };
 		FAB3FA4D2146B3BD007B5C62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB3FA4B2146B3BD007B5C62 /* LaunchScreen.storyboard */; };
@@ -59,6 +63,10 @@
 		990BC60BD1C923D127025750 /* Pods-RandomUsersListTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomUsersListTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RandomUsersListTests/Pods-RandomUsersListTests.release.xcconfig"; sourceTree = "<group>"; };
 		B01FC5F7957B927D87AE459D /* Pods_RandomUsersListTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RandomUsersListTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C857041114B4C73A1588E963 /* Pods_RandomUsersList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RandomUsersList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA8068112147DA3E0093CEB0 /* UserDetailsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsSection.swift; sourceTree = "<group>"; };
+		FA8068132147DCDC0093CEB0 /* UserDetailsSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsSectionHeaderView.swift; sourceTree = "<group>"; };
+		FA8068152147E0FA0093CEB0 /* UserDetailsRowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsRowTableViewCell.swift; sourceTree = "<group>"; };
+		FA8068162147E0FA0093CEB0 /* UserDetailsRowTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailsRowTableViewCell.xib; sourceTree = "<group>"; };
 		FAB3FA3F2146B3BB007B5C62 /* RandomUsersList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomUsersList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB3FA422146B3BB007B5C62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAB3FA492146B3BD007B5C62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -295,6 +303,10 @@
 				FAB3FA9C21470B0B007B5C62 /* UserDetailsTableViewController.swift */,
 				FAB3FA9E21471125007B5C62 /* UserDetailsTableViewHeader.swift */,
 				FAB3FAA021471148007B5C62 /* UserDetailsTableViewHeader.xib */,
+				FA8068112147DA3E0093CEB0 /* UserDetailsSection.swift */,
+				FA8068132147DCDC0093CEB0 /* UserDetailsSectionHeaderView.swift */,
+				FA8068152147E0FA0093CEB0 /* UserDetailsRowTableViewCell.swift */,
+				FA8068162147E0FA0093CEB0 /* UserDetailsRowTableViewCell.xib */,
 			);
 			path = TableViewController;
 			sourceTree = "<group>";
@@ -383,6 +395,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA8068182147E0FA0093CEB0 /* UserDetailsRowTableViewCell.xib in Resources */,
 				FAB3FA4D2146B3BD007B5C62 /* LaunchScreen.storyboard in Resources */,
 				FAB3FA4A2146B3BD007B5C62 /* Assets.xcassets in Resources */,
 				FAB3FA9A214706BF007B5C62 /* UserDetailsViewController.xib in Resources */,
@@ -464,6 +477,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA8068142147DCDC0093CEB0 /* UserDetailsSectionHeaderView.swift in Sources */,
 				FAB3FA432146B3BB007B5C62 /* AppDelegate.swift in Sources */,
 				FAB3FA6F2146BCED007B5C62 /* CoordinatorIdentifier.swift in Sources */,
 				FAB3FA672146B8FE007B5C62 /* UsersListViewController.swift in Sources */,
@@ -485,7 +499,9 @@
 				FAB3FA7D2146D2FA007B5C62 /* UsersListTableViewController.swift in Sources */,
 				FAB3FA752146C6FD007B5C62 /* User.swift in Sources */,
 				FAB3FA9621470626007B5C62 /* UserDetailsCoordinator.swift in Sources */,
+				FA8068122147DA3E0093CEB0 /* UserDetailsSection.swift in Sources */,
 				FAB3FA942146E54A007B5C62 /* UserDetailsPresenter.swift in Sources */,
+				FA8068172147E0FA0093CEB0 /* UserDetailsRowTableViewCell.swift in Sources */,
 				FAB3FA792146C94C007B5C62 /* PaginatedEnveloppe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

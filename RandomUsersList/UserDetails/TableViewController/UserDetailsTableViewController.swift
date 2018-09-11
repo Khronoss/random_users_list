@@ -14,6 +14,8 @@ protocol IUserDetailsTableViewController {
 }
 
 class UserDetailsTableViewController: NSObject {
+	let sizingHeader: UserDetailsSectionHeaderView
+	
 	var tableView: UITableView? {
 		didSet {
 			tableView?.delegate = self
@@ -25,20 +27,36 @@ class UserDetailsTableViewController: NSObject {
 	
 	var user: User? {
 		didSet {
-			updateTableViewHeader()
+			if let user = self.user {
+				updateTableViewHeader(withUser: user)
+				initSections(withUser: user)
+			}
+		}
+	}
+	var sections: [UserDetailsSection] = [] {
+		didSet {
 			tableView?.reloadData()
 		}
 	}
 	
-	func registerCells() {
+	override init() {
+		let sizingHeader = UserDetailsSectionHeaderView(frame: .zero)
+		sizingHeader.translatesAutoresizingMaskIntoConstraints = false
 		
+		self.sizingHeader = sizingHeader
+		
+		super.init()
+	}
+
+	func registerCells() {
+		tableView?.registerHeaderClass(cellClass: UserDetailsSectionHeaderView.self)
+		tableView?.registerNibWithClass(cellClass: UserDetailsRowTableViewCell.self)
 	}
 	
-	func updateTableViewHeader() {
+	func updateTableViewHeader(withUser user: User) {
 		createTableViewHeaderIfNeeded()
 		
-		guard let header = tableView?.tableHeaderView as? UserDetailsTableViewHeader,
-			let user = self.user else {
+		guard let header = tableView?.tableHeaderView as? UserDetailsTableViewHeader else {
 			return
 		}
 		
@@ -58,24 +76,91 @@ class UserDetailsTableViewController: NSObject {
 		
 		tableView.tableHeaderView = header
 	}
+	
+	func initSections(withUser user: User) {
+		let sections: [UserDetailsSection] = [
+			UserDetailsSection(title: nil,
+							   rows: [
+								(title: "test", value: "test")
+				]),
+			UserDetailsSection(title: "Some section",
+							   rows: [
+								(title: "Something", value: "somewhat"),
+								(title: "Foo", value: "bar")
+				])
+		]
+		self.sections = sections
+	}
+	
+	func configSectionHeader(_ header: UserDetailsSectionHeaderView,
+							 forSection section: UserDetailsSection) {
+		header.title = section.title
+		header.tintColor = UIColor.lightGray
+	}
 }
 
 extension UserDetailsTableViewController: IUserDetailsTableViewController {}
 
-extension UserDetailsTableViewController: UITableViewDelegate {}
+extension UserDetailsTableViewController: UITableViewDelegate {
+	func tableView(_ tableView: UITableView,
+				   viewForHeaderInSection section: Int) -> UIView? {
+		let sectionItem = sections[section]
+		guard let _ = sectionItem.title else {
+			return nil
+		}
+		
+		let header: UserDetailsSectionHeaderView = tableView.dequeueReusableHeader()
+		
+		configSectionHeader(header, forSection: sectionItem)
+		
+		return header
+	}
+	
+	func tableView(_ tableView: UITableView,
+				   heightForHeaderInSection section: Int) -> CGFloat {
+		let sectionItem = sections[section]
+		guard let _ = sectionItem.title else {
+			return 1
+		}
+		
+		configSectionHeader(sizingHeader, forSection: sectionItem)
+
+		let targetSize = CGSize(width: tableView.frame.width,
+								height: 0)
+		let size = sizingHeader.systemLayoutSizeFitting(targetSize,
+														withHorizontalFittingPriority: .required,
+														verticalFittingPriority: .defaultLow)
+		
+		return size.height
+	}
+	
+	func tableView(_ tableView: UITableView,
+				   heightForFooterInSection section: Int) -> CGFloat {
+		return 1
+	}
+}
 
 extension UserDetailsTableViewController: UITableViewDataSource {
 	func numberOfSections(in tableView: UITableView) -> Int {
-		return 0
+		return sections.count
 	}
 	
 	func tableView(_ tableView: UITableView,
 				   numberOfRowsInSection section: Int) -> Int {
-		return 0
+		let sectionItem = sections[section]
+	
+		return sectionItem.rows.count
 	}
 	
 	func tableView(_ tableView: UITableView,
 				   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		return UITableViewCell()
+		let cell: UserDetailsRowTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+		let sectionItem = sections[indexPath.section]
+		let row = sectionItem.rows[indexPath.row]
+		
+		cell.title = row.title
+		cell.value = row.value
+		
+		return cell
 	}
 }

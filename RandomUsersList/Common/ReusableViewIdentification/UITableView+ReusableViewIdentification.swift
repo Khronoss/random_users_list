@@ -10,7 +10,7 @@ import UIKit
 
 extension UITableView {
 	func registerNibWithClass<T>(cellClass: T.Type)
-		where T: NSObject & ReusableViewIdentification {
+		where T: UITableViewCell & ReusableViewIdentification {
 			let bundle = Bundle(for: cellClass.classForCoder())
 			let nib = UINib(nibName: cellClass.nibName, bundle: bundle)
 			
@@ -18,9 +18,22 @@ extension UITableView {
 	}
 	
 	func dequeueReusableCell<T>(for indexPath: IndexPath) -> T
-		where T: ReusableViewIdentification {
+		where T: UITableViewCell & ReusableViewIdentification {
 			let cell = self.dequeueReusableCell(withIdentifier: T.defaultIdentifier,
 												for: indexPath) as? T
+			
+			return cell!
+	}
+
+	func registerHeaderClass<T>(cellClass: T.Type)
+		where T: UITableViewHeaderFooterView & ReusableViewIdentification {
+			self.register(cellClass.classForCoder(),
+						  forHeaderFooterViewReuseIdentifier: cellClass.defaultIdentifier)
+	}
+
+	func dequeueReusableHeader<T>() -> T
+		where T: UITableViewHeaderFooterView & ReusableViewIdentification {
+			let cell = self.dequeueReusableHeaderFooterView(withIdentifier: T.defaultIdentifier) as? T
 			
 			return cell!
 	}
