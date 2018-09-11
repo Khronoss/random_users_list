@@ -26,7 +26,8 @@ struct UserDetailsCoordinator {
 
 extension UserDetailsCoordinator: Coordinator {
 	func start() {
-		let tableViewController = UserDetailsTableViewController()
+		let localizator = Localizator()
+		let tableViewController = UserDetailsTableViewController(localizator: localizator)
 		
 		let controller = UserDetailsViewController(user: self.user,
 												   tableViewController: tableViewController)

@@ -16,14 +16,18 @@ struct User: Decodable {
 	
 	let gender: Gender
 	let name: UserName
+	let location: UserLocation
 	let email: String
+	let phone: String
 	let picture: UserPicture
 	let nationality: String
 	
 	private enum CodingKeys: String, CodingKey {
 		case gender
 		case name
+		case location
 		case email
+		case phone
 		case picture
 		case nationality = "nat"
 	}

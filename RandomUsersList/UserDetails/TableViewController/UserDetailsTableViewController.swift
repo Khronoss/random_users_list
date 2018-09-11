@@ -16,6 +16,8 @@ protocol IUserDetailsTableViewController {
 class UserDetailsTableViewController: NSObject {
 	let sizingHeader: UserDetailsSectionHeaderView
 	
+	var localizator: Localizable?
+	
 	var tableView: UITableView? {
 		didSet {
 			tableView?.delegate = self
@@ -39,11 +41,12 @@ class UserDetailsTableViewController: NSObject {
 		}
 	}
 	
-	override init() {
+	init(localizator: Localizable?) {
 		let sizingHeader = UserDetailsSectionHeaderView(frame: .zero)
 		sizingHeader.translatesAutoresizingMaskIntoConstraints = false
 		
 		self.sizingHeader = sizingHeader
+		self.localizator = localizator
 		
 		super.init()
 	}
@@ -81,12 +84,23 @@ class UserDetailsTableViewController: NSObject {
 		let sections: [UserDetailsSection] = [
 			UserDetailsSection(title: nil,
 							   rows: [
-								(title: "test", value: "test")
+								(title: localizedString(LocalizableKey.UserDetails.gender),
+								 value: user.gender.rawValue),
+								(title: localizedString(LocalizableKey.UserDetails.phone),
+								 value: user.phone),
+								(title: localizedString(LocalizableKey.UserDetails.nationality),
+								 value: user.nationality)
 				]),
-			UserDetailsSection(title: "Some section",
+			UserDetailsSection(title: localizedString(LocalizableKey.UserDetails.sectionLocation),
 							   rows: [
-								(title: "Something", value: "somewhat"),
-								(title: "Foo", value: "bar")
+								(title: localizedString(LocalizableKey.UserDetails.street),
+								 value: user.location.street),
+								(title: localizedString(LocalizableKey.UserDetails.city),
+								 value: user.location.city),
+								(title: localizedString(LocalizableKey.UserDetails.state),
+								value: user.location.state),
+								(title: localizedString(LocalizableKey.UserDetails.postCode),
+								value: "\(user.location.postCode)")
 				])
 		]
 		self.sections = sections
@@ -164,3 +178,5 @@ extension UserDetailsTableViewController: UITableViewDataSource {
 		return cell
 	}
 }
+
+extension UserDetailsTableViewController: LocalizableObject {}
