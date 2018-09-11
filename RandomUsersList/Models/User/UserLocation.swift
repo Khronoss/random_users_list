@@ -34,4 +34,14 @@ struct UserLocation: Decodable {
 			postCode = try container.decode(String.self, forKey: .postCode)
 		}
 	}
+	
+	init(street: String,
+		 city: String,
+		 state: String,
+		 postCode: String) {
+		self.street = street
+		self.city = city
+		self.state = state
+		self.postCode = postCode
+	}
 }
