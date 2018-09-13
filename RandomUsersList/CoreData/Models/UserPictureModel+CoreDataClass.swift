@@ -14,14 +14,19 @@ import CoreData
 public class UserPictureModel: NSManagedObject {
 	init(fromPicture picture: UserPicture,
 		 in context: NSManagedObjectContext) {
-		super.init(entity: UserPictureModel.entity(),
+		let entity = NSEntityDescription.entity(forEntityName: "UserPictureModel", in: context)
+		super.init(entity: entity!,
 				   insertInto: context)
 		
 		large = picture.large.absoluteString
 		medium = picture.medium.absoluteString
 		thumbnail = picture.thumbnail.absoluteString
 	}
-	
+
+	public override init(entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
+		super.init(entity: entity, insertInto: context)
+	}
+
 	func toUserPicture() -> UserPicture {
 		let picture = UserPicture(large: URL(string: large!)!,
 								  medium: URL(string: medium!)!,

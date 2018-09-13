@@ -10,11 +10,17 @@
     <entity name="UserModel" representedClassName=".UserModel" syncable="YES">
         <attribute name="email" attributeType="String" syncable="YES"/>
         <attribute name="gender" attributeType="String" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="nationality" attributeType="String" syncable="YES"/>
         <attribute name="phone" attributeType="String" syncable="YES"/>
         <relationship name="location" maxCount="1" deletionRule="Cascade" destinationEntity="UserLocationModel" inverseName="user" inverseEntity="UserLocationModel" syncable="YES"/>
         <relationship name="name" maxCount="1" deletionRule="Cascade" destinationEntity="UserNameModel" inverseName="user" inverseEntity="UserNameModel" syncable="YES"/>
         <relationship name="picture" maxCount="1" deletionRule="Cascade" destinationEntity="UserPictureModel" inverseName="user" inverseEntity="UserPictureModel" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="identifier"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="UserNameModel" representedClassName=".UserNameModel" syncable="YES">
         <attribute name="firstname" attributeType="String" syncable="YES"/>
@@ -29,9 +35,9 @@
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserModel" inverseName="picture" inverseEntity="UserModel" syncable="YES"/>
     </entity>
     <elements>
-        <element name="UserModel" positionX="-63" positionY="-18" width="128" height="150"/>
-        <element name="UserNameModel" positionX="-54" positionY="18" width="128" height="105"/>
         <element name="UserLocationModel" positionX="-36" positionY="27" width="128" height="120"/>
+        <element name="UserModel" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="UserNameModel" positionX="-54" positionY="18" width="128" height="105"/>
         <element name="UserPictureModel" positionX="-18" positionY="36" width="128" height="105"/>
     </elements>
 </model>

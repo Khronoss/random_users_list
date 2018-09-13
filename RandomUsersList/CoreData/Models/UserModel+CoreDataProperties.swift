@@ -2,7 +2,7 @@
 //  UserModel+CoreDataProperties.swift
 //  RandomUsersList
 //
-//  Created by Anthony Merle on 11/09/2018.
+//  Created by Anthony Merle on 13/09/2018.
 //  Copyright © 2018 Anthony Merle. All rights reserved.
 //
 //
@@ -17,12 +17,13 @@ extension UserModel {
         return NSFetchRequest<UserModel>(entityName: "UserModel")
     }
 
-    @NSManaged public var gender: String?
     @NSManaged public var email: String?
-    @NSManaged public var phone: String?
+    @NSManaged public var gender: String?
     @NSManaged public var nationality: String?
-    @NSManaged public var name: UserNameModel?
+    @NSManaged public var phone: String?
+    @NSManaged public var identifier: Double
     @NSManaged public var location: UserLocationModel?
+    @NSManaged public var name: UserNameModel?
     @NSManaged public var picture: UserPictureModel?
 
 }

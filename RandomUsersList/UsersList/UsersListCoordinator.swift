@@ -24,7 +24,10 @@ struct UsersListCoordinator {
 extension UsersListCoordinator: Coordinator {
 	mutating func start() {
 		let networkLayer = UsersListNetworkLayer()
-		let usersListService = UsersListService(networkLayer: networkLayer)
+		let appDelegate = UIApplication.shared.delegate as? AppDelegate
+		let dataLayer = UsersListDataLayer(context: appDelegate!.persistentContainer.viewContext)
+		let usersListService = UsersListService(networkLayer: networkLayer,
+												dataLayer: dataLayer)
 		let tableController = UsersListTableViewController()
 		let controller = UsersListViewController(usersListService: usersListService,
 												 tableViewController: tableController)

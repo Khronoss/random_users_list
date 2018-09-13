@@ -16,6 +16,7 @@ class UsersListViewController: UIViewController {
 	
 	var delegate: UserDetailsPresenter?
 	var currentPageIndex: Int = 0
+	let usersPerPage = 10
 	
 	required init(usersListService: IUsersListService,
 				  tableViewController: IUsersListTableViewController) {
@@ -41,7 +42,8 @@ class UsersListViewController: UIViewController {
 	func loadUsersList(pageIndex: Int) {
 		currentPageIndex = pageIndex
 		
-		usersListService.getUsersList(forPage: currentPageIndex) { (users, error) in
+		usersListService.getUsersList(forPage: currentPageIndex,
+									  countPerPage: usersPerPage) { (users, error) in
 			guard let usersList = users else {
 				print("Failed loading User's list")
 				print(error!)

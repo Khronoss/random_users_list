@@ -21,7 +21,8 @@ extension UsersListNetworkLayer: IUsersListNetworkLayer {
 					   completion: @escaping (PaginatedEnveloppe<[User]>?, Error?) -> Void) {
 		Alamofire.request("https://randomuser.me/api/1.0/?seed=lydia&results=10&page=\(index)")
 			.responseJSON { (response) in
-				guard let data = response.data else {
+				guard let data = response.data,
+					response.error == nil else {
 					return completion(nil, response.error)
 				}
 				

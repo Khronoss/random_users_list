@@ -14,7 +14,8 @@ import CoreData
 public class UserModel: NSManagedObject {
 	init(fromUser user: User,
 		 in context: NSManagedObjectContext) {
-		super.init(entity: UserModel.entity(),
+		let entity = NSEntityDescription.entity(forEntityName: "UserModel", in: context)
+		super.init(entity: entity!,
 				   insertInto: context)
 		
 		email = user.email
@@ -33,6 +34,10 @@ public class UserModel: NSManagedObject {
 		picture = UserPictureModel(fromPicture: user.picture,
 								   in: context)
 		picture?.user = self
+	}
+	
+	public override init(entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
+		super.init(entity: entity, insertInto: context)
 	}
 	
 	func toUser() -> User {

@@ -12,7 +12,8 @@ import CoreData
 protocol IUsersListDataLayer {
 	func retrieveUsers(forPage index: Int,
 					   countPerPage: Int) -> [User]
-	func saveUsers(_ users: [User])
+	func saveUsers(_ users: [User],
+				   startingIdentifier: Double)
 }
 
 struct UsersListDataLayer {
@@ -23,7 +24,14 @@ extension UsersListDataLayer: IUsersListDataLayer {
 	func retrieveUsers(forPage index: Int,
 					   countPerPage: Int) -> [User] {
 		do {
-			let users = try context.fetch(UserModel.fetchRequest()) as! [UserModel]
+			let request: NSFetchRequest<UserModel> = UserModel.fetchRequest()
+			request.sortDescriptors = [NSSortDescriptor(key: "identifier", ascending: true)]
+			let users = try context.fetch(request)
+			
+			guard !users.isEmpty else {
+				return []
+			}
+			
 			let maxIndex = min(((index + 1) * countPerPage), users.count)
 			let pageUsers = users[(index * countPerPage)..<maxIndex]
 			
@@ -34,12 +42,21 @@ extension UsersListDataLayer: IUsersListDataLayer {
 		}
 	}
 	
-	func saveUsers(_ users: [User]) {
-		let _ = users.map { (user) -> UserModel in
+	func saveUsers(_ users: [User],
+				   startingIdentifier: Double) {
+		var identifier = startingIdentifier
+		for user in users {
 			let userModel = UserModel(fromUser: user,
 									  in: context)
-			
-			return userModel
+			userModel.identifier = identifier
+			identifier += 1
+		}
+		
+		do {
+			try context.save()
+		} catch {
+			print("Failed saving Users in context")
+			print(error)
 		}
 	}
 }

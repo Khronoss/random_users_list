@@ -14,7 +14,8 @@ import CoreData
 public class UserLocationModel: NSManagedObject {
 	init(fromLocation location: UserLocation,
 		 in context: NSManagedObjectContext) {
-		super.init(entity: UserLocationModel.entity(),
+		let entity = NSEntityDescription.entity(forEntityName: "UserLocationModel", in: context)
+		super.init(entity: entity!,
 				   insertInto: context)
 		
 		street = location.street
@@ -23,6 +24,10 @@ public class UserLocationModel: NSManagedObject {
 		postCode = location.postCode
 	}
 	
+	public override init(entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
+		super.init(entity: entity, insertInto: context)
+	}
+
 	func toUserLocation() -> UserLocation {
 		let location = UserLocation(street: street!,
 									city: city!,
