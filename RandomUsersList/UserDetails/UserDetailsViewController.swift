@@ -8,8 +8,16 @@
 
 import UIKit
 
+protocol UserDetailsControllerDelegate {
+	mutating func dismiss()
+}
+
 class UserDetailsViewController: UIViewController {
 	@IBOutlet weak var tableView: UITableView!
+	@IBOutlet weak var buttonBackground: UIVisualEffectView!
+	
+	var delegate: UserDetailsControllerDelegate?
+	private var interactionController: UIPercentDrivenInteractiveTransition?
 	
 	let user: User
 	var tableViewController: IUserDetailsTableViewController
@@ -20,6 +28,10 @@ class UserDetailsViewController: UIViewController {
 		self.tableViewController = tableViewController
 		
 		super.init(nibName: nil, bundle: nil)
+		
+		transitioningDelegate = self
+		modalPresentationStyle = .custom
+		self.tableViewController.tableViewScrollDelegate = self
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
@@ -31,5 +43,33 @@ class UserDetailsViewController: UIViewController {
 
 		tableViewController.tableView = tableView
 		tableViewController.user = user
+	}
+	
+	override func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
+		
+		buttonBackground.layer.cornerRadius = buttonBackground.bounds.height / 2
+	}
+	
+	@IBAction func dismissTapped() {
+		delegate?.dismiss()
+	}
+}
+
+extension UserDetailsViewController: UIScrollViewDelegate {
+	func scrollViewDidScroll(_ scrollView: UIScrollView) {
+		print(scrollView.contentOffset)
+	}
+}
+
+extension UserDetailsViewController: UIViewControllerTransitioningDelegate {
+	func animationController(forPresented presented: UIViewController,
+							 presenting: UIViewController,
+							 source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+		return UserDetailsAnimatedTransitioning(isPresenting: true)
+	}
+	
+	func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+		return UserDetailsAnimatedTransitioning(isPresenting: false)
 	}
 }

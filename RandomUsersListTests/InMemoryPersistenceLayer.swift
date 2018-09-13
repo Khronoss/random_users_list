@@ -21,6 +21,7 @@ class InMemoryPersistenceLayer {
 			// Check if the data store is in memory
 			precondition( description.type == NSInMemoryStoreType )
 			
+			container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
 			// Check if creating container wrong
 			if let error = error {
 				fatalError("Create an in-mem coordinator failed \(error)")

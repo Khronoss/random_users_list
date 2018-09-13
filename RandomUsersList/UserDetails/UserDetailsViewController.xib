@@ -6,12 +6,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserDetailsViewController" customModule="RandomUsersList" customModuleProvider="target">
             <connections>
+                <outlet property="buttonBackground" destination="xrE-EU-dya" id="tgI-5w-Unz"/>
                 <outlet property="tableView" destination="tLV-mw-INr" id="bYF-aJ-hhp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -25,11 +27,53 @@
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrE-EU-dya">
+                    <rect key="frame" x="325" y="30" width="30" height="30"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="idb-Xg-RRw">
+                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bGj-bk-oX3">
+                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="UO7-4k-Y9e">
+                                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifg-d1-wxk">
+                                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                            <state key="normal" title="X"/>
+                                            <connections>
+                                                <action selector="dismissTapped" destination="-1" eventType="touchUpInside" id="0Xn-Ne-Fmg"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ifg-d1-wxk" firstAttribute="leading" secondItem="UO7-4k-Y9e" secondAttribute="leading" id="651-OT-gea"/>
+                                        <constraint firstAttribute="trailing" secondItem="ifg-d1-wxk" secondAttribute="trailing" id="OL4-bE-TBY"/>
+                                        <constraint firstAttribute="bottom" secondItem="ifg-d1-wxk" secondAttribute="bottom" id="PuQ-2n-IVc"/>
+                                        <constraint firstItem="ifg-d1-wxk" firstAttribute="top" secondItem="UO7-4k-Y9e" secondAttribute="top" id="VVk-el-lYX"/>
+                                    </constraints>
+                                </view>
+                                <vibrancyEffect>
+                                    <blurEffect style="extraLight"/>
+                                </vibrancyEffect>
+                            </visualEffectView>
+                        </subviews>
+                    </view>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="ElO-CV-ffA"/>
+                        <constraint firstAttribute="width" secondItem="xrE-EU-dya" secondAttribute="height" id="RO7-Nh-tTZ"/>
+                    </constraints>
+                    <blurEffect style="light"/>
+                </visualEffectView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xrE-EU-dya" secondAttribute="trailing" constant="20" id="6Ki-7g-gNX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tLV-mw-INr" secondAttribute="trailing" id="AFu-Cl-wbH"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="tLV-mw-INr" secondAttribute="bottom" id="NGJ-ly-1uV"/>
+                <constraint firstItem="xrE-EU-dya" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="cVS-lV-cba"/>
                 <constraint firstItem="tLV-mw-INr" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="jar-FX-Vdn"/>
                 <constraint firstItem="tLV-mw-INr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xe5-6F-hxo"/>
             </constraints>

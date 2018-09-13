@@ -13,6 +13,7 @@
 		FA6BA3A4214A929B00C480C0 /* MockedUsersListNetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6BA3A3214A929B00C480C0 /* MockedUsersListNetworkLayer.swift */; };
 		FA6BA3A6214A94E500C480C0 /* MockedUsersListDataLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6BA3A5214A94E500C480C0 /* MockedUsersListDataLayer.swift */; };
 		FA6BA3A8214A98B300C480C0 /* User+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6BA3A7214A98B300C480C0 /* User+Helpers.swift */; };
+		FA6BA3AB214AA05300C480C0 /* UserDetailsAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6BA3AA214AA05300C480C0 /* UserDetailsAnimatedTransitioning.swift */; };
 		FA8068122147DA3E0093CEB0 /* UserDetailsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8068112147DA3E0093CEB0 /* UserDetailsSection.swift */; };
 		FA8068142147DCDC0093CEB0 /* UserDetailsSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8068132147DCDC0093CEB0 /* UserDetailsSectionHeaderView.swift */; };
 		FA8068172147E0FA0093CEB0 /* UserDetailsRowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8068152147E0FA0093CEB0 /* UserDetailsRowTableViewCell.swift */; };
@@ -88,6 +89,7 @@
 		FA6BA3A3214A929B00C480C0 /* MockedUsersListNetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedUsersListNetworkLayer.swift; sourceTree = "<group>"; };
 		FA6BA3A5214A94E500C480C0 /* MockedUsersListDataLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedUsersListDataLayer.swift; sourceTree = "<group>"; };
 		FA6BA3A7214A98B300C480C0 /* User+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Helpers.swift"; sourceTree = "<group>"; };
+		FA6BA3AA214AA05300C480C0 /* UserDetailsAnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsAnimatedTransitioning.swift; sourceTree = "<group>"; };
 		FA8068112147DA3E0093CEB0 /* UserDetailsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsSection.swift; sourceTree = "<group>"; };
 		FA8068132147DCDC0093CEB0 /* UserDetailsSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsSectionHeaderView.swift; sourceTree = "<group>"; };
 		FA8068152147E0FA0093CEB0 /* UserDetailsRowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsRowTableViewCell.swift; sourceTree = "<group>"; };
@@ -200,6 +202,14 @@
 				FA6BA3A7214A98B300C480C0 /* User+Helpers.swift */,
 			);
 			path = UsersList;
+			sourceTree = "<group>";
+		};
+		FA6BA3A9214AA00C00C480C0 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				FA6BA3AA214AA05300C480C0 /* UserDetailsAnimatedTransitioning.swift */,
+			);
+			path = Transition;
 			sourceTree = "<group>";
 		};
 		FA8068192147E94F0093CEB0 /* Localization */ = {
@@ -386,6 +396,7 @@
 		FAB3FA922146E53B007B5C62 /* UserDetails */ = {
 			isa = PBXGroup;
 			children = (
+				FA6BA3A9214AA00C00C480C0 /* Transition */,
 				FAB3FA9B21470AEF007B5C62 /* TableViewController */,
 				FAB3FA932146E54A007B5C62 /* UserDetailsPresenter.swift */,
 				FAB3FA9521470625007B5C62 /* UserDetailsCoordinator.swift */,
@@ -588,6 +599,7 @@
 				FAB3FA8B2146D5DE007B5C62 /* UserTableViewCell.swift in Sources */,
 				FAB3FA9D21470B0B007B5C62 /* UserDetailsTableViewController.swift in Sources */,
 				FA80688B21482F310093CEB0 /* UserModel+CoreDataProperties.swift in Sources */,
+				FA6BA3AB214AA05300C480C0 /* UserDetailsAnimatedTransitioning.swift in Sources */,
 				FA80681B2147E9730093CEB0 /* Localizable.swift in Sources */,
 				FAB3FAA3214716E7007B5C62 /* UIMetric.swift in Sources */,
 				FA80688C21482F310093CEB0 /* UserNameModel+CoreDataProperties.swift in Sources */,

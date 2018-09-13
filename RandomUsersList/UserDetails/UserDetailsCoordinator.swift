@@ -31,7 +31,17 @@ extension UserDetailsCoordinator: Coordinator {
 		
 		let controller = UserDetailsViewController(user: self.user,
 												   tableViewController: tableViewController)
+		controller.delegate = self
 		
-		sourceController.show(controller, sender: self)
+		sourceController.present(controller,
+								 animated: true,
+								 completion: nil)
+	}
+}
+
+extension UserDetailsCoordinator: UserDetailsControllerDelegate {
+	mutating func dismiss() {
+		sourceController.dismiss(animated: true, completion: nil)
+		delegate?.coordinatorDidEnd(withIdentifier: identifier)
 	}
 }
