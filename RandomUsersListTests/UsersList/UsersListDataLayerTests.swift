@@ -42,8 +42,8 @@ class UsersListDataLayerTests: XCTestCase {
 	
 	func testSaveTwoUsersUsingCoreData() {
 		let users: [User] = [
-			createRandomUser(firstname: "First", lastname: "Last"),
-			createRandomUser(firstname: "Foo", lastname: "Bar")
+			User.createRandomUser(firstname: "First", lastname: "Last"),
+			User.createRandomUser(firstname: "Foo", lastname: "Bar")
 		]
 		
 		dataLayer.saveUsers(users, startingIdentifier: 0)
@@ -56,16 +56,16 @@ class UsersListDataLayerTests: XCTestCase {
 	
 	func testSaveTenUsersAndRetrieveInSameOrder() {
 		let users: [User] = [
-			createRandomUser(firstname: "001", lastname: "001"),
-			createRandomUser(firstname: "002", lastname: "002"),
-			createRandomUser(firstname: "003", lastname: "003"),
-			createRandomUser(firstname: "004", lastname: "004"),
-			createRandomUser(firstname: "005", lastname: "005"),
-			createRandomUser(firstname: "006", lastname: "006"),
-			createRandomUser(firstname: "007", lastname: "007"),
-			createRandomUser(firstname: "008", lastname: "008"),
-			createRandomUser(firstname: "009", lastname: "009"),
-			createRandomUser(firstname: "010", lastname: "010")
+			User.createRandomUser(firstname: "001", lastname: "001"),
+			User.createRandomUser(firstname: "002", lastname: "002"),
+			User.createRandomUser(firstname: "003", lastname: "003"),
+			User.createRandomUser(firstname: "004", lastname: "004"),
+			User.createRandomUser(firstname: "005", lastname: "005"),
+			User.createRandomUser(firstname: "006", lastname: "006"),
+			User.createRandomUser(firstname: "007", lastname: "007"),
+			User.createRandomUser(firstname: "008", lastname: "008"),
+			User.createRandomUser(firstname: "009", lastname: "009"),
+			User.createRandomUser(firstname: "010", lastname: "010")
 		]
 		
 		dataLayer.saveUsers(users, startingIdentifier: 0)
@@ -88,7 +88,7 @@ class UsersListDataLayerTests: XCTestCase {
 	func testSaveTwentyUsersAndRetrieveTenSecondPageInSameOrder() {
 		let users = (1...20).map { (value) -> User in
 			let numberStr = String(format: "%03d", value)
-			return self.createRandomUser(firstname: numberStr,
+			return User.createRandomUser(firstname: numberStr,
 										 lastname: numberStr)
 		}
 		
@@ -107,26 +107,5 @@ class UsersListDataLayerTests: XCTestCase {
 		XCTAssertEqual(savedUsers[7].name.firstname, "018")
 		XCTAssertEqual(savedUsers[8].name.firstname, "019")
 		XCTAssertEqual(savedUsers[9].name.firstname, "020")
-	}
-	
-	private func createRandomUser(firstname: String,
-								  lastname: String) -> User {
-		let user = User(gender: .male,
-						name: UserName(title: "Mr.",
-									   firstname: firstname,
-									   lastname: lastname),
-						location: UserLocation(street: "street",
-											   city: "city",
-											   state: "state",
-											   postCode: "1234"),
-						email: "email@mail.com",
-						phone: "555-1234-5678",
-						picture: UserPicture(large: URL(string: "https://www.example.com")!,
-											 medium: URL(string: "https://www.example.com")!,
-											 thumbnail: URL(string: "https://www.example.com")!),
-						nationality: "EN")
-		
-		return user
-		
 	}
 }
