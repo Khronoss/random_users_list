@@ -298,6 +298,7 @@
 		FAB3FA412146B3BB007B5C62 /* RandomUsersList */ = {
 			isa = PBXGroup;
 			children = (
+				FACDFA0E214C09290035E179 /* CardView */,
 				FACDF9F3214BC6100035E179 /* ImageService */,
 				FA80682B2147F5350093CEB0 /* CoreData */,
 				FA8068192147E94F0093CEB0 /* Localization */,
@@ -357,7 +358,6 @@
 				FAB3FA822146D492007B5C62 /* Coordinator */,
 				FAB3FA832146D4A5007B5C62 /* ReusableViewIdentification */,
 				FAB3FAA2214716E7007B5C62 /* UIMetric.swift */,
-				FACDFA02214BF7220035E179 /* CardView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -448,10 +448,6 @@
 				FACDFA04214BFFEA0035E179 /* UserDetailsSectionHeaderView.xib */,
 				FA8068152147E0FA0093CEB0 /* UserDetailsRowTableViewCell.swift */,
 				FA8068162147E0FA0093CEB0 /* UserDetailsRowTableViewCell.xib */,
-				FACDFA06214C01DD0035E179 /* EmptyCardFooterView.swift */,
-				FACDFA08214C01E60035E179 /* EmptyCardFooterView.xib */,
-				FACDFA0A214C03CE0035E179 /* EmptyCardHeaderView.swift */,
-				FACDFA0C214C03D60035E179 /* EmptyCardHeaderView.xib */,
 			);
 			path = TableViewController;
 			sourceTree = "<group>";
@@ -465,6 +461,18 @@
 				FACDF9F8214BC9910035E179 /* ImageDataLayer.swift */,
 			);
 			path = ImageService;
+			sourceTree = "<group>";
+		};
+		FACDFA0E214C09290035E179 /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+				FACDFA02214BF7220035E179 /* CardView.swift */,
+				FACDFA06214C01DD0035E179 /* EmptyCardFooterView.swift */,
+				FACDFA08214C01E60035E179 /* EmptyCardFooterView.xib */,
+				FACDFA0A214C03CE0035E179 /* EmptyCardHeaderView.swift */,
+				FACDFA0C214C03D60035E179 /* EmptyCardHeaderView.xib */,
+			);
+			path = CardView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
