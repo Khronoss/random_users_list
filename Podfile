@@ -7,6 +7,7 @@ target 'RandomUsersList' do
 
   # Pods for RandomUsersList
   pod 'Alamofire', '~> 4.7.2'
+  pod 'AlamofireImage', '~> 3.3.1'
   
   target 'RandomUsersListTests' do
     inherit! :search_paths

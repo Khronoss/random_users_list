@@ -11,6 +11,7 @@ import UIKit
 protocol IUserDetailsTableViewController {
 	var tableView: UITableView? { get set }
 	var user: User? { get set }
+	var userPicture: UIImage? { get set }
 }
 
 class UserDetailsTableViewController: NSObject {
@@ -35,6 +36,13 @@ class UserDetailsTableViewController: NSObject {
 			}
 		}
 	}
+	
+	var userPicture: UIImage? {
+		didSet {
+			updateUserPicture()
+		}
+	}
+	
 	var sections: [UserDetailsSection] = [] {
 		didSet {
 			tableView?.reloadData()
@@ -65,6 +73,7 @@ class UserDetailsTableViewController: NSObject {
 		
 		header.name = user.name.fullName(withTitle: true)
 		header.email = user.email
+		updateUserPicture()
 	}
 	
 	func createTableViewHeaderIfNeeded() {
@@ -78,6 +87,14 @@ class UserDetailsTableViewController: NSObject {
 		let header = UserDetailsTableViewHeader(frame: CGRect(origin: .zero, size: headerSize))
 		
 		tableView.tableHeaderView = header
+	}
+	
+	func updateUserPicture() {
+		guard let header = tableView?.tableHeaderView as? UserDetailsTableViewHeader else {
+				return
+		}
+
+		header.profileImageView.image = userPicture
 	}
 	
 	func initSections(withUser user: User) {

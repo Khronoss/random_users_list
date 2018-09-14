@@ -20,11 +20,14 @@ class UserDetailsViewController: UIViewController {
 	
 	let user: User
 	var tableViewController: IUserDetailsTableViewController
+	let imageService: IImageService
 	
 	init(user: User,
-		 tableViewController: IUserDetailsTableViewController) {
+		 tableViewController: IUserDetailsTableViewController,
+		 imageService: IImageService) {
 		self.user = user
 		self.tableViewController = tableViewController
+		self.imageService = imageService
 		
 		super.init(nibName: nil, bundle: nil)
 		
@@ -41,6 +44,7 @@ class UserDetailsViewController: UIViewController {
 
 		tableViewController.tableView = tableView
 		tableViewController.user = user
+		loadUserPicture(withUrl: user.picture.large)
 	}
 	
 	override func viewDidLayoutSubviews() {
@@ -51,6 +55,16 @@ class UserDetailsViewController: UIViewController {
 	
 	@IBAction func dismissTapped() {
 		delegate?.dismiss()
+	}
+	
+	func loadUserPicture(withUrl url: URL) {
+		imageService.getImage(atURL: url) { (image, error) in
+			guard let loadedImage = image else {
+				print("Could not load user's picture")
+				return
+			}
+			self.tableViewController.userPicture = loadedImage
+		}
 	}
 }
 

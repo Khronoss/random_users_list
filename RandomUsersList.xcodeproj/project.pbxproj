@@ -66,6 +66,10 @@
 		FAB3FA9F21471125007B5C62 /* UserDetailsTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3FA9E21471125007B5C62 /* UserDetailsTableViewHeader.swift */; };
 		FAB3FAA121471148007B5C62 /* UserDetailsTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB3FAA021471148007B5C62 /* UserDetailsTableViewHeader.xib */; };
 		FAB3FAA3214716E7007B5C62 /* UIMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3FAA2214716E7007B5C62 /* UIMetric.swift */; };
+		FACDF9F5214BC6280035E179 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACDF9F4214BC6280035E179 /* ImageService.swift */; };
+		FACDF9F7214BC6970035E179 /* ImageNetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACDF9F6214BC6970035E179 /* ImageNetworkLayer.swift */; };
+		FACDF9F9214BC9910035E179 /* ImageDataLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACDF9F8214BC9910035E179 /* ImageDataLayer.swift */; };
+		FACDF9FB214BCEF60035E179 /* ImageServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACDF9FA214BCEF60035E179 /* ImageServiceFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +152,10 @@
 		FAB3FA9E21471125007B5C62 /* UserDetailsTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsTableViewHeader.swift; sourceTree = "<group>"; };
 		FAB3FAA021471148007B5C62 /* UserDetailsTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailsTableViewHeader.xib; sourceTree = "<group>"; };
 		FAB3FAA2214716E7007B5C62 /* UIMetric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMetric.swift; sourceTree = "<group>"; };
+		FACDF9F4214BC6280035E179 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		FACDF9F6214BC6970035E179 /* ImageNetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNetworkLayer.swift; sourceTree = "<group>"; };
+		FACDF9F8214BC9910035E179 /* ImageDataLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataLayer.swift; sourceTree = "<group>"; };
+		FACDF9FA214BCEF60035E179 /* ImageServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageServiceFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +278,7 @@
 		FAB3FA412146B3BB007B5C62 /* RandomUsersList */ = {
 			isa = PBXGroup;
 			children = (
+				FACDF9F3214BC6100035E179 /* ImageService */,
 				FA80682B2147F5350093CEB0 /* CoreData */,
 				FA8068192147E94F0093CEB0 /* Localization */,
 				FAB3FA922146E53B007B5C62 /* UserDetails */,
@@ -418,6 +427,17 @@
 				FA8068162147E0FA0093CEB0 /* UserDetailsRowTableViewCell.xib */,
 			);
 			path = TableViewController;
+			sourceTree = "<group>";
+		};
+		FACDF9F3214BC6100035E179 /* ImageService */ = {
+			isa = PBXGroup;
+			children = (
+				FACDF9FA214BCEF60035E179 /* ImageServiceFactory.swift */,
+				FACDF9F4214BC6280035E179 /* ImageService.swift */,
+				FACDF9F6214BC6970035E179 /* ImageNetworkLayer.swift */,
+				FACDF9F8214BC9910035E179 /* ImageDataLayer.swift */,
+			);
+			path = ImageService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -571,10 +591,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RandomUsersList/Pods-RandomUsersList-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -597,6 +619,7 @@
 				FA80682A2147F42C0093CEB0 /* UsersListDataLayer.swift in Sources */,
 				FAB3FA812146D482007B5C62 /* ReusableViewIdentification.swift in Sources */,
 				FAB3FA8B2146D5DE007B5C62 /* UserTableViewCell.swift in Sources */,
+				FACDF9F9214BC9910035E179 /* ImageDataLayer.swift in Sources */,
 				FAB3FA9D21470B0B007B5C62 /* UserDetailsTableViewController.swift in Sources */,
 				FA80688B21482F310093CEB0 /* UserModel+CoreDataProperties.swift in Sources */,
 				FA6BA3AB214AA05300C480C0 /* UserDetailsAnimatedTransitioning.swift in Sources */,
@@ -625,10 +648,13 @@
 				FAB3FA9621470626007B5C62 /* UserDetailsCoordinator.swift in Sources */,
 				FA8068122147DA3E0093CEB0 /* UserDetailsSection.swift in Sources */,
 				FA80682E2147F5680093CEB0 /* Model.xcdatamodeld in Sources */,
+				FACDF9F7214BC6970035E179 /* ImageNetworkLayer.swift in Sources */,
 				FA8068262147EEE90093CEB0 /* LocalizableKey.swift in Sources */,
 				FAB3FA942146E54A007B5C62 /* UserDetailsPresenter.swift in Sources */,
 				FA8068172147E0FA0093CEB0 /* UserDetailsRowTableViewCell.swift in Sources */,
+				FACDF9FB214BCEF60035E179 /* ImageServiceFactory.swift in Sources */,
 				FAB3FA792146C94C007B5C62 /* PaginatedEnveloppe.swift in Sources */,
+				FACDF9F5214BC6280035E179 /* ImageService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

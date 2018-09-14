@@ -28,9 +28,10 @@ extension UserDetailsCoordinator: Coordinator {
 	func start() {
 		let localizator = Localizator()
 		let tableViewController = UserDetailsTableViewController(localizator: localizator)
-		
+		let imageService = ImageServiceFactory.service()
 		let controller = UserDetailsViewController(user: self.user,
-												   tableViewController: tableViewController)
+												   tableViewController: tableViewController,
+												   imageService: imageService)
 		controller.delegate = self
 		
 		sourceController.present(controller,
