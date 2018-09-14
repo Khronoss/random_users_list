@@ -17,7 +17,6 @@ class UserDetailsViewController: UIViewController {
 	@IBOutlet weak var buttonBackground: UIVisualEffectView!
 	
 	var delegate: UserDetailsControllerDelegate?
-	private var interactionController: UIPercentDrivenInteractiveTransition?
 	
 	let user: User
 	var tableViewController: IUserDetailsTableViewController
@@ -31,7 +30,6 @@ class UserDetailsViewController: UIViewController {
 		
 		transitioningDelegate = self
 		modalPresentationStyle = .custom
-		self.tableViewController.tableViewScrollDelegate = self
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
@@ -53,12 +51,6 @@ class UserDetailsViewController: UIViewController {
 	
 	@IBAction func dismissTapped() {
 		delegate?.dismiss()
-	}
-}
-
-extension UserDetailsViewController: UIScrollViewDelegate {
-	func scrollViewDidScroll(_ scrollView: UIScrollView) {
-		print(scrollView.contentOffset)
 	}
 }
 

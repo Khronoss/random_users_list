@@ -11,14 +11,12 @@ import UIKit
 protocol IUserDetailsTableViewController {
 	var tableView: UITableView? { get set }
 	var user: User? { get set }
-	var tableViewScrollDelegate: UIScrollViewDelegate? { get set }
 }
 
 class UserDetailsTableViewController: NSObject {
 	let sizingHeader: UserDetailsSectionHeaderView
 	
 	var localizator: Localizable?
-	var tableViewScrollDelegate: UIScrollViewDelegate?
 	
 	var tableView: UITableView? {
 		didSet {
@@ -153,10 +151,6 @@ extension UserDetailsTableViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView,
 				   heightForFooterInSection section: Int) -> CGFloat {
 		return 1
-	}
-	
-	func scrollViewDidScroll(_ scrollView: UIScrollView) {
-		tableViewScrollDelegate?.scrollViewDidScroll?(scrollView)
 	}
 }
 
