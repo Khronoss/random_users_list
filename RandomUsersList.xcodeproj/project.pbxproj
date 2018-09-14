@@ -73,6 +73,7 @@
 		FACDF9FD214BF14F0035E179 /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACDF9FC214BF14F0035E179 /* UserLogin.swift */; };
 		FACDFA00214BF21E0035E179 /* UserLoginModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACDF9FE214BF21E0035E179 /* UserLoginModel+CoreDataClass.swift */; };
 		FACDFA01214BF21E0035E179 /* UserLoginModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACDF9FF214BF21E0035E179 /* UserLoginModel+CoreDataProperties.swift */; };
+		FACDFA03214BF7220035E179 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACDFA02214BF7220035E179 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +163,7 @@
 		FACDF9FC214BF14F0035E179 /* UserLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogin.swift; sourceTree = "<group>"; };
 		FACDF9FE214BF21E0035E179 /* UserLoginModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserLoginModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FACDF9FF214BF21E0035E179 /* UserLoginModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserLoginModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FACDFA02214BF7220035E179 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -345,6 +347,7 @@
 				FAB3FA822146D492007B5C62 /* Coordinator */,
 				FAB3FA832146D4A5007B5C62 /* ReusableViewIdentification */,
 				FAB3FAA2214716E7007B5C62 /* UIMetric.swift */,
+				FACDFA02214BF7220035E179 /* CardView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -601,11 +604,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-RandomUsersList/Pods-RandomUsersList-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/DynamicColor/DynamicColor.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicColor.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -647,6 +652,7 @@
 				FAB3FA99214706BF007B5C62 /* UserDetailsViewController.swift in Sources */,
 				FA80684C2147F8520093CEB0 /* UserPictureModel+CoreDataClass.swift in Sources */,
 				FAB3FA9F21471125007B5C62 /* UserDetailsTableViewHeader.swift in Sources */,
+				FACDFA03214BF7220035E179 /* CardView.swift in Sources */,
 				FAB3FA7F2146D409007B5C62 /* UITableView+ReusableViewIdentification.swift in Sources */,
 				FA80688921482F310093CEB0 /* UserLocationModel+CoreDataProperties.swift in Sources */,
 				FAB3FA912146DA7B007B5C62 /* UserPicture.swift in Sources */,

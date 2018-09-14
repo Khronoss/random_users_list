@@ -38,6 +38,9 @@ class UsersListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+		view.backgroundColor = UIMetric.applicationColor
+		tableView.backgroundColor = UIColor.clear
+		tableView.indicatorStyle = .white
 		tableViewController.tableView = tableView
 		loadUsersList(pageIndex: 1)
     }

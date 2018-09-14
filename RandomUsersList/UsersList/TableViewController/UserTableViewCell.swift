@@ -35,7 +35,11 @@ class UserTableViewCell: UITableViewCell {
 		super.awakeFromNib()
 		
 		nameLabel.numberOfLines = 0
+		nameLabel.textColor = UIMetric.textColor
 		emailLabel.numberOfLines = 0
+		emailLabel.textColor = UIMetric.textColorLight
+		pictureImageView.clipsToBounds = true
+		pictureImageView.layer.cornerRadius = UIMetric.cornerRadiusSmall
 	}
 }
 

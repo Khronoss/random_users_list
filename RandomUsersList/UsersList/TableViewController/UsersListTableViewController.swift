@@ -28,6 +28,7 @@ class UsersListTableViewController: NSObject {
 		didSet {
 			tableView?.delegate = self
 			tableView?.dataSource = self
+			tableView?.separatorStyle = .none
 			
 			registerCells()
 		}
@@ -57,6 +58,7 @@ class UsersListTableViewController: NSObject {
 		cell.name = user.name.fullName(withTitle: true)
 		cell.email = user.email
 		cell.userPicture = userPictures[user.email]
+		cell.backgroundColor = UIColor.clear
 		
 		return cell
 	}
@@ -66,6 +68,10 @@ class UsersListTableViewController: NSObject {
 		let cell: LoadingTableViewCell = tableView.dequeueReusableCell(for: indexPath)
 		
 		cell.loader.startAnimating()
+		cell.loader.activityIndicatorViewStyle = .whiteLarge
+		cell.loader.color = UIColor.white
+		
+		cell.backgroundColor = UIColor.clear
 		
 		return cell
 	}
