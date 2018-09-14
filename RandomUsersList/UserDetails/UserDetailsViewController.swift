@@ -31,8 +31,8 @@ class UserDetailsViewController: UIViewController {
 		
 		super.init(nibName: nil, bundle: nil)
 		
-//		transitioningDelegate = self
-//		modalPresentationStyle = .custom
+		transitioningDelegate = self
+		modalPresentationStyle = .custom
 	}
 	
 	required init?(coder aDecoder: NSCoder) {

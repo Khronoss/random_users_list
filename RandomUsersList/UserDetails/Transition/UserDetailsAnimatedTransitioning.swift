@@ -41,9 +41,10 @@ extension UserDetailsAnimatedTransitioning: UIViewControllerAnimatedTransitionin
 		
 		view.frame = isPresenting ? lowerFrame : upperFrame
 		controller.view.transform = isPresenting ? identityTransform : modifiedTranform
-
+		controller.beginAppearanceTransition(!isPresenting, animated: true)
+		
 		container.addSubview(view)
-
+		
 		UIView.animate(withDuration: transitionDuration(using: transitionContext),
 					   delay: 0,
 					   usingSpringWithDamping: 1,
@@ -54,9 +55,10 @@ extension UserDetailsAnimatedTransitioning: UIViewControllerAnimatedTransitionin
 						controller.view.transform = self.isPresenting ? modifiedTranform : identityTransform
 		}) { (_) in
 			let success = !transitionContext.transitionWasCancelled
-			if !success && self.isPresenting {
+			if !success {
 				view.removeFromSuperview()
 			}
+			controller.endAppearanceTransition()
 			transitionContext.completeTransition(success)
 		}
 	}
