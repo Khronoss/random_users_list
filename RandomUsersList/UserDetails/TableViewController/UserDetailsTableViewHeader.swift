@@ -57,5 +57,10 @@ class UserDetailsTableViewHeader: UIView {
 		bottomAnchor.constraint(equalTo: view.bottomAnchor)
 		
 		view.backgroundColor = UIColor.clear
+		
+		nameLabel.textColor = UIColor.white
+		emailLabel.textColor = UIColor.white
+		profileImageView.clipsToBounds = true
+		profileImageView.layer.cornerRadius = UIMetric.cornerRadius
 	}
 }

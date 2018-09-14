@@ -34,9 +34,7 @@ extension UserDetailsCoordinator: Coordinator {
 												   imageService: imageService)
 		controller.delegate = self
 		
-		sourceController.present(controller,
-								 animated: true,
-								 completion: nil)
+		sourceController.show(controller, sender: self)
 	}
 }
 

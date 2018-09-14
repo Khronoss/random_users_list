@@ -45,6 +45,14 @@ class UsersListViewController: UIViewController {
 		loadUsersList(pageIndex: 1)
     }
 	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		if let selectedIndex = tableView.indexPathForSelectedRow {
+			tableView.deselectRow(at: selectedIndex, animated: false)
+		}
+	}
+	
 	func loadUsersList(pageIndex: Int) {
 		currentPageIndex = pageIndex
 		

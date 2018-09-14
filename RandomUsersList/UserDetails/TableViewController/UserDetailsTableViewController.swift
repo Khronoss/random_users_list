@@ -61,6 +61,8 @@ class UserDetailsTableViewController: NSObject {
 
 	func registerCells() {
 		tableView?.registerHeaderClass(cellClass: UserDetailsSectionHeaderView.self)
+		tableView?.registerHeaderClass(cellClass: EmptyCardFooterView.self)
+		tableView?.registerHeaderClass(cellClass: EmptyCardHeaderView.self)
 		tableView?.registerNibWithClass(cellClass: UserDetailsRowTableViewCell.self)
 	}
 	
@@ -152,7 +154,9 @@ extension UserDetailsTableViewController: UITableViewDelegate {
 				   viewForHeaderInSection section: Int) -> UIView? {
 		let sectionItem = sections[section]
 		guard let _ = sectionItem.title else {
-			return nil
+			let header: EmptyCardHeaderView = tableView.dequeueReusableHeader()
+			
+			return header
 		}
 		
 		let header: UserDetailsSectionHeaderView = tableView.dequeueReusableHeader()
@@ -166,7 +170,7 @@ extension UserDetailsTableViewController: UITableViewDelegate {
 				   heightForHeaderInSection section: Int) -> CGFloat {
 		let sectionItem = sections[section]
 		guard let _ = sectionItem.title else {
-			return 1
+			return 30
 		}
 		
 		configSectionHeader(sizingHeader, forSection: sectionItem)
@@ -181,8 +185,15 @@ extension UserDetailsTableViewController: UITableViewDelegate {
 	}
 	
 	func tableView(_ tableView: UITableView,
+				   viewForFooterInSection section: Int) -> UIView? {
+		let header: EmptyCardFooterView = tableView.dequeueReusableHeader()
+
+		return header
+	}
+	
+	func tableView(_ tableView: UITableView,
 				   heightForFooterInSection section: Int) -> CGFloat {
-		return 1
+		return 30
 	}
 }
 
@@ -206,6 +217,7 @@ extension UserDetailsTableViewController: UITableViewDataSource {
 		
 		cell.title = row.title
 		cell.value = row.value
+		cell.backgroundColor = UIColor.clear
 		
 		return cell
 	}

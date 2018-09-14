@@ -74,6 +74,11 @@
 		FACDFA00214BF21E0035E179 /* UserLoginModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACDF9FE214BF21E0035E179 /* UserLoginModel+CoreDataClass.swift */; };
 		FACDFA01214BF21E0035E179 /* UserLoginModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACDF9FF214BF21E0035E179 /* UserLoginModel+CoreDataProperties.swift */; };
 		FACDFA03214BF7220035E179 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACDFA02214BF7220035E179 /* CardView.swift */; };
+		FACDFA05214BFFEA0035E179 /* UserDetailsSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACDFA04214BFFEA0035E179 /* UserDetailsSectionHeaderView.xib */; };
+		FACDFA07214C01DD0035E179 /* EmptyCardFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACDFA06214C01DD0035E179 /* EmptyCardFooterView.swift */; };
+		FACDFA09214C01E60035E179 /* EmptyCardFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACDFA08214C01E60035E179 /* EmptyCardFooterView.xib */; };
+		FACDFA0B214C03CE0035E179 /* EmptyCardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACDFA0A214C03CE0035E179 /* EmptyCardHeaderView.swift */; };
+		FACDFA0D214C03D60035E179 /* EmptyCardHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACDFA0C214C03D60035E179 /* EmptyCardHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +169,11 @@
 		FACDF9FE214BF21E0035E179 /* UserLoginModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserLoginModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FACDF9FF214BF21E0035E179 /* UserLoginModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserLoginModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FACDFA02214BF7220035E179 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		FACDFA04214BFFEA0035E179 /* UserDetailsSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailsSectionHeaderView.xib; sourceTree = "<group>"; };
+		FACDFA06214C01DD0035E179 /* EmptyCardFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCardFooterView.swift; sourceTree = "<group>"; };
+		FACDFA08214C01E60035E179 /* EmptyCardFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyCardFooterView.xib; sourceTree = "<group>"; };
+		FACDFA0A214C03CE0035E179 /* EmptyCardHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCardHeaderView.swift; sourceTree = "<group>"; };
+		FACDFA0C214C03D60035E179 /* EmptyCardHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyCardHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -435,8 +445,13 @@
 				FAB3FAA021471148007B5C62 /* UserDetailsTableViewHeader.xib */,
 				FA8068112147DA3E0093CEB0 /* UserDetailsSection.swift */,
 				FA8068132147DCDC0093CEB0 /* UserDetailsSectionHeaderView.swift */,
+				FACDFA04214BFFEA0035E179 /* UserDetailsSectionHeaderView.xib */,
 				FA8068152147E0FA0093CEB0 /* UserDetailsRowTableViewCell.swift */,
 				FA8068162147E0FA0093CEB0 /* UserDetailsRowTableViewCell.xib */,
+				FACDFA06214C01DD0035E179 /* EmptyCardFooterView.swift */,
+				FACDFA08214C01E60035E179 /* EmptyCardFooterView.xib */,
+				FACDFA0A214C03CE0035E179 /* EmptyCardHeaderView.swift */,
+				FACDFA0C214C03D60035E179 /* EmptyCardHeaderView.xib */,
 			);
 			path = TableViewController;
 			sourceTree = "<group>";
@@ -539,11 +554,14 @@
 			files = (
 				FA8068182147E0FA0093CEB0 /* UserDetailsRowTableViewCell.xib in Resources */,
 				FAB3FA4D2146B3BD007B5C62 /* LaunchScreen.storyboard in Resources */,
+				FACDFA05214BFFEA0035E179 /* UserDetailsSectionHeaderView.xib in Resources */,
 				FAB3FA4A2146B3BD007B5C62 /* Assets.xcassets in Resources */,
 				FAB3FA9A214706BF007B5C62 /* UserDetailsViewController.xib in Resources */,
+				FACDFA09214C01E60035E179 /* EmptyCardFooterView.xib in Resources */,
 				FA8068202147EA030093CEB0 /* Localizable.strings in Resources */,
 				FAB3FA882146D56D007B5C62 /* LoadingTableViewCell.xib in Resources */,
 				FAB3FA682146B8FE007B5C62 /* UsersListViewController.xib in Resources */,
+				FACDFA0D214C03D60035E179 /* EmptyCardHeaderView.xib in Resources */,
 				FAB3FA8C2146D5DE007B5C62 /* UserTableViewCell.xib in Resources */,
 				FAB3FAA121471148007B5C62 /* UserDetailsTableViewHeader.xib in Resources */,
 			);
@@ -633,6 +651,7 @@
 				FACDFA01214BF21E0035E179 /* UserLoginModel+CoreDataProperties.swift in Sources */,
 				FAB3FA672146B8FE007B5C62 /* UsersListViewController.swift in Sources */,
 				FA80682A2147F42C0093CEB0 /* UsersListDataLayer.swift in Sources */,
+				FACDFA07214C01DD0035E179 /* EmptyCardFooterView.swift in Sources */,
 				FAB3FA812146D482007B5C62 /* ReusableViewIdentification.swift in Sources */,
 				FAB3FA8B2146D5DE007B5C62 /* UserTableViewCell.swift in Sources */,
 				FACDF9F9214BC9910035E179 /* ImageDataLayer.swift in Sources */,
@@ -670,6 +689,7 @@
 				FAB3FA942146E54A007B5C62 /* UserDetailsPresenter.swift in Sources */,
 				FA8068172147E0FA0093CEB0 /* UserDetailsRowTableViewCell.swift in Sources */,
 				FACDF9FB214BCEF60035E179 /* ImageServiceFactory.swift in Sources */,
+				FACDFA0B214C03CE0035E179 /* EmptyCardHeaderView.swift in Sources */,
 				FAB3FA792146C94C007B5C62 /* PaginatedEnveloppe.swift in Sources */,
 				FACDFA00214BF21E0035E179 /* UserLoginModel+CoreDataClass.swift in Sources */,
 				FACDF9F5214BC6280035E179 /* ImageService.swift in Sources */,

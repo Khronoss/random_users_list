@@ -12,6 +12,7 @@ class UserTableViewCell: UITableViewCell {
 	@IBOutlet weak var nameLabel: UILabel!
 	@IBOutlet weak var emailLabel: UILabel!
 	@IBOutlet weak var pictureImageView: UIImageView!
+	@IBOutlet weak var cardView: CardView!
 	
 	var name: String? {
 		didSet {
@@ -40,6 +41,11 @@ class UserTableViewCell: UITableViewCell {
 		emailLabel.textColor = UIMetric.textColorLight
 		pictureImageView.clipsToBounds = true
 		pictureImageView.layer.cornerRadius = UIMetric.cornerRadiusSmall
+	}
+	
+	override func setSelected(_ selected: Bool, animated: Bool) {
+		cardView.backgroundColor = selected ? UIColor(white: 0.98, alpha: 1) : UIColor.white
+		cardView.showShadow = !selected
 	}
 }
 

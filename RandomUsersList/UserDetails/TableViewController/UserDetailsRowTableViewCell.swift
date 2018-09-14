@@ -11,6 +11,7 @@ import UIKit
 class UserDetailsRowTableViewCell: UITableViewCell {
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var valueLabel: UILabel!
+	@IBOutlet weak var cardView: CardView!
 	
 	var title: String? {
 		didSet {
@@ -28,7 +29,10 @@ class UserDetailsRowTableViewCell: UITableViewCell {
         super.awakeFromNib()
 
 		titleLabel.numberOfLines = 0
+		titleLabel.textColor = UIMetric.textColor
 		valueLabel.numberOfLines = 0
+		valueLabel.textColor = UIMetric.textColorLight
+		cardView.hasRoundedCorners = false
 	}
 }
 

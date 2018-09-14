@@ -12,40 +12,53 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="111" id="KGk-i7-Jjw" customClass="UserDetailsRowTableViewCell" customModule="RandomUsersList" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="111" id="KGk-i7-Jjw" customClass="UserDetailsRowTableViewCell" customModule="RandomUsersList" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="324" height="111"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="324" height="110.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lFF-6q-6Ih">
-                        <rect key="frame" x="20" y="10" width="284" height="90.5"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ngv-WZ-lJs" customClass="CardView" customModule="RandomUsersList" customModuleProvider="target">
+                        <rect key="frame" x="20" y="-5" width="284" height="120.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrA-j3-Zhx">
-                                <rect key="frame" x="0.0" y="35" width="33.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FbH-qj-Qdq">
-                                <rect key="frame" x="43.5" y="36.5" width="240.5" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lFF-6q-6Ih">
+                                <rect key="frame" x="20" y="15" width="244" height="90.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrA-j3-Zhx">
+                                        <rect key="frame" x="0.0" y="35" width="33.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FbH-qj-Qdq">
+                                        <rect key="frame" x="43.5" y="36.5" width="200.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                    </stackView>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="lFF-6q-6Ih" secondAttribute="trailing" constant="20" id="AhY-Zb-6Yr"/>
+                            <constraint firstItem="lFF-6q-6Ih" firstAttribute="centerY" secondItem="Ngv-WZ-lJs" secondAttribute="centerY" id="Mki-VS-lsB"/>
+                            <constraint firstItem="lFF-6q-6Ih" firstAttribute="leading" secondItem="Ngv-WZ-lJs" secondAttribute="leading" constant="20" id="t69-xz-mK5"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="lFF-6q-6Ih" secondAttribute="trailing" constant="20" id="AR7-CW-a2f"/>
-                    <constraint firstItem="lFF-6q-6Ih" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Uv0-RA-dcg"/>
-                    <constraint firstAttribute="bottom" secondItem="lFF-6q-6Ih" secondAttribute="bottom" constant="10" id="WDq-HV-e3p"/>
-                    <constraint firstItem="lFF-6q-6Ih" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="xMc-yI-oAN"/>
+                    <constraint firstItem="Ngv-WZ-lJs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="5K6-Dk-Bnc"/>
+                    <constraint firstItem="Ngv-WZ-lJs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="-5" id="Aj1-48-bQZ"/>
+                    <constraint firstAttribute="bottom" secondItem="Ngv-WZ-lJs" secondAttribute="bottom" constant="-5" id="HqT-Nn-6wn"/>
+                    <constraint firstItem="lFF-6q-6Ih" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="MLh-sL-44i"/>
+                    <constraint firstAttribute="trailing" secondItem="Ngv-WZ-lJs" secondAttribute="trailing" constant="20" id="WVN-Vx-r6r"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="cardView" destination="Ngv-WZ-lJs" id="wnN-4L-e33"/>
                 <outlet property="titleLabel" destination="vrA-j3-Zhx" id="I5d-a4-O4r"/>
                 <outlet property="valueLabel" destination="FbH-qj-Qdq" id="ba9-ee-aBG"/>
             </connections>

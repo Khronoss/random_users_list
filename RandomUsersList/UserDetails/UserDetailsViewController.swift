@@ -31,8 +31,8 @@ class UserDetailsViewController: UIViewController {
 		
 		super.init(nibName: nil, bundle: nil)
 		
-		transitioningDelegate = self
-		modalPresentationStyle = .custom
+//		transitioningDelegate = self
+//		modalPresentationStyle = .custom
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
@@ -42,6 +42,9 @@ class UserDetailsViewController: UIViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
 
+		view.backgroundColor = UIMetric.applicationColor
+		tableView.backgroundColor = UIColor.clear
+		
 		tableViewController.tableView = tableView
 		tableViewController.user = user
 		loadUserPicture(withUrl: user.picture.large)

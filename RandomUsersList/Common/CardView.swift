@@ -9,6 +9,18 @@
 import UIKit
 
 class CardView: UIView {
+	var hasRoundedCorners = true {
+		didSet {
+			updateCornerRadius()
+		}
+	}
+	
+	var showShadow = true {
+		didSet {
+			updateShadowView()
+		}
+	}
+	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		
@@ -22,11 +34,19 @@ class CardView: UIView {
 	}
 	
 	func initView() {
-		layer.cornerRadius = UIMetric.cornerRadius
-		
 		layer.shadowColor = UIColor.black.cgColor
 		layer.shadowOffset = CGSize(width: 1, height: 2)
 		layer.shadowRadius = 3
-		layer.shadowOpacity = 0.4
+		
+		updateCornerRadius()
+		updateShadowView()
+	}
+	
+	func updateCornerRadius() {
+		layer.cornerRadius = hasRoundedCorners ? UIMetric.cornerRadius : 0
+	}
+	
+	func updateShadowView() {
+		layer.shadowOpacity = showShadow ? 0.4 : 0
 	}
 }
