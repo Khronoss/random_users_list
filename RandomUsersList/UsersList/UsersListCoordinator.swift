@@ -29,8 +29,10 @@ extension UsersListCoordinator: Coordinator {
 		let usersListService = UsersListService(networkLayer: networkLayer,
 												dataLayer: dataLayer)
 		let tableController = UsersListTableViewController()
+		let imageService = ImageServiceFactory.service()
 		let controller = UsersListViewController(usersListService: usersListService,
-												 tableViewController: tableController)
+												 tableViewController: tableController,
+												 imageService: imageService)
 
 		self.controller = controller
 		controller.delegate = self

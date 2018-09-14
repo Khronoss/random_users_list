@@ -11,6 +11,7 @@ import UIKit
 class UserTableViewCell: UITableViewCell {
 	@IBOutlet weak var nameLabel: UILabel!
 	@IBOutlet weak var emailLabel: UILabel!
+	@IBOutlet weak var pictureImageView: UIImageView!
 	
 	var name: String? {
 		didSet {
@@ -21,6 +22,12 @@ class UserTableViewCell: UITableViewCell {
 	var email: String? {
 		didSet {
 			emailLabel.text = email
+		}
+	}
+	
+	var userPicture: UIImage? {
+		didSet {
+			pictureImageView.image = userPicture
 		}
 	}
 	

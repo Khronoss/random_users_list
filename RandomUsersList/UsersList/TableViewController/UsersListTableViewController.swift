@@ -18,6 +18,9 @@ protocol IUsersListTableViewController {
 	var tableView: UITableView? { get set }
 	var users: [User] { get set }
 	var delegate: IUsersListTableViewControllerDelegate? { get set }
+	
+	func setPicture(_ image: UIImage?,
+					forUser user: User)
 }
 
 class UsersListTableViewController: NSObject {
@@ -36,6 +39,7 @@ class UsersListTableViewController: NSObject {
 			tableView?.reloadData()
 		}
 	}
+	var userPictures: [String: UIImage] = [:]
 	
 	var delegate: IUsersListTableViewControllerDelegate?
 	var isLoadingMoreUsers: Bool = false
@@ -52,6 +56,7 @@ class UsersListTableViewController: NSObject {
 		
 		cell.name = user.name.fullName(withTitle: true)
 		cell.email = user.email
+		cell.userPicture = userPictures[user.email]
 		
 		return cell
 	}
@@ -66,7 +71,16 @@ class UsersListTableViewController: NSObject {
 	}
 }
 
-extension UsersListTableViewController: IUsersListTableViewController {}
+extension UsersListTableViewController: IUsersListTableViewController {
+	func setPicture(_ image: UIImage?,
+					forUser user: User) {
+		userPictures[user.email] = image
+		if let index = users.index(where: { $0.email == user.email }) {
+			let section = IndexPath(row: index, section: 0)
+			tableView?.reloadRows(at: [section], with: .none)
+		}
+	}
+}
 
 extension UsersListTableViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView,

@@ -25,11 +25,13 @@ struct ImageDataLayer {
 
 extension ImageDataLayer: IImageDataLayer {
 	func saveImage(_ image: UIImage, forURL url: URL) {
-		var cachedImages = getCachedImages() ?? [:]
-		
-		cachedImages[url.absoluteString] = UIImagePNGRepresentation(image)!
-		
-		userDefaults.set(cachedImages, forKey: ImageDataLayer.imagesCacheKey)
+		DispatchQueue.global().async {
+			var cachedImages = self.getCachedImages() ?? [:]
+			
+			cachedImages[url.absoluteString] = UIImagePNGRepresentation(image)!
+			
+			self.userDefaults.set(cachedImages, forKey: ImageDataLayer.imagesCacheKey)
+		}
 	}
 	
 	func retrieveImage(forURL url: URL) -> UIImage? {
