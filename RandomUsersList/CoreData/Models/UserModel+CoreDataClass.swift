@@ -26,6 +26,10 @@ public class UserModel: NSManagedObject {
 		name = UserNameModel(fromName: user.name,
 							 in: context)
 		name?.user = self
+
+		login = UserLoginModel(fromLogin: user.login,
+							   in: context)
+		login?.user = self
 		
 		location = UserLocationModel(fromLocation: user.location,
 									 in: context)
@@ -45,6 +49,7 @@ public class UserModel: NSManagedObject {
 						name: name!.toUserName(),
 						location: location!.toUserLocation(),
 						email: email!,
+						login: login!.toLogin(),
 						phone: phone!,
 						picture: picture!.toUserPicture(),
 						nationality: nationality!)

@@ -118,6 +118,21 @@ class UserDetailsTableViewController: NSObject {
 								value: user.location.state),
 								(title: localizedString(LocalizableKey.UserDetails.postCode),
 								value: "\(user.location.postCode)")
+				]),
+			UserDetailsSection(title: localizedString(LocalizableKey.UserDetails.sectionLogin),
+							   rows: [
+								(title: localizedString(LocalizableKey.UserDetails.username),
+								 value: user.login.username),
+								(title: localizedString(LocalizableKey.UserDetails.password),
+								 value: user.login.password),
+								(title: localizedString(LocalizableKey.UserDetails.salt),
+								 value: user.login.salt),
+								(title: localizedString(LocalizableKey.UserDetails.md5),
+								 value: user.login.md5),
+								(title: localizedString(LocalizableKey.UserDetails.sha1),
+								 value: user.login.sha1),
+								(title: localizedString(LocalizableKey.UserDetails.sha256),
+								 value: user.login.sha256)
 				])
 		]
 		self.sections = sections

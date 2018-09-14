@@ -70,6 +70,9 @@
 		FACDF9F7214BC6970035E179 /* ImageNetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACDF9F6214BC6970035E179 /* ImageNetworkLayer.swift */; };
 		FACDF9F9214BC9910035E179 /* ImageDataLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACDF9F8214BC9910035E179 /* ImageDataLayer.swift */; };
 		FACDF9FB214BCEF60035E179 /* ImageServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACDF9FA214BCEF60035E179 /* ImageServiceFactory.swift */; };
+		FACDF9FD214BF14F0035E179 /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACDF9FC214BF14F0035E179 /* UserLogin.swift */; };
+		FACDFA00214BF21E0035E179 /* UserLoginModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACDF9FE214BF21E0035E179 /* UserLoginModel+CoreDataClass.swift */; };
+		FACDFA01214BF21E0035E179 /* UserLoginModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACDF9FF214BF21E0035E179 /* UserLoginModel+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +159,9 @@
 		FACDF9F6214BC6970035E179 /* ImageNetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNetworkLayer.swift; sourceTree = "<group>"; };
 		FACDF9F8214BC9910035E179 /* ImageDataLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataLayer.swift; sourceTree = "<group>"; };
 		FACDF9FA214BCEF60035E179 /* ImageServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageServiceFactory.swift; sourceTree = "<group>"; };
+		FACDF9FC214BF14F0035E179 /* UserLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogin.swift; sourceTree = "<group>"; };
+		FACDF9FE214BF21E0035E179 /* UserLoginModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserLoginModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FACDF9FF214BF21E0035E179 /* UserLoginModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserLoginModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +249,8 @@
 		FA80682F2147F8010093CEB0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FACDF9FE214BF21E0035E179 /* UserLoginModel+CoreDataClass.swift */,
+				FACDF9FF214BF21E0035E179 /* UserLoginModel+CoreDataProperties.swift */,
 				FA8068402147F8520093CEB0 /* UserModel+CoreDataClass.swift */,
 				FA80688721482F310093CEB0 /* UserModel+CoreDataProperties.swift */,
 				FA8068422147F8520093CEB0 /* UserLocationModel+CoreDataClass.swift */,
@@ -398,6 +406,7 @@
 				FAB3FA8E2146D9A5007B5C62 /* UserName.swift */,
 				FAB3FA902146DA7B007B5C62 /* UserPicture.swift */,
 				FA8068272147F1810093CEB0 /* UserLocation.swift */,
+				FACDF9FC214BF14F0035E179 /* UserLogin.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -612,9 +621,11 @@
 			files = (
 				FA8068142147DCDC0093CEB0 /* UserDetailsSectionHeaderView.swift in Sources */,
 				FA80688A21482F310093CEB0 /* UserPictureModel+CoreDataProperties.swift in Sources */,
+				FACDF9FD214BF14F0035E179 /* UserLogin.swift in Sources */,
 				FAB3FA432146B3BB007B5C62 /* AppDelegate.swift in Sources */,
 				FA80684A2147F8520093CEB0 /* UserLocationModel+CoreDataClass.swift in Sources */,
 				FAB3FA6F2146BCED007B5C62 /* CoordinatorIdentifier.swift in Sources */,
+				FACDFA01214BF21E0035E179 /* UserLoginModel+CoreDataProperties.swift in Sources */,
 				FAB3FA672146B8FE007B5C62 /* UsersListViewController.swift in Sources */,
 				FA80682A2147F42C0093CEB0 /* UsersListDataLayer.swift in Sources */,
 				FAB3FA812146D482007B5C62 /* ReusableViewIdentification.swift in Sources */,
@@ -654,6 +665,7 @@
 				FA8068172147E0FA0093CEB0 /* UserDetailsRowTableViewCell.swift in Sources */,
 				FACDF9FB214BCEF60035E179 /* ImageServiceFactory.swift in Sources */,
 				FAB3FA792146C94C007B5C62 /* PaginatedEnveloppe.swift in Sources */,
+				FACDFA00214BF21E0035E179 /* UserLoginModel+CoreDataClass.swift in Sources */,
 				FACDF9F5214BC6280035E179 /* ImageService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

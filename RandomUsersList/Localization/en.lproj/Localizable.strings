@@ -9,8 +9,17 @@
 "DETAILS.gender" = "Gender :";
 "DETAILS.phoneNumber" = "Phone number :";
 "DETAILS.nationality" = "Nationality :";
+
 "DETAILS.sectionLocation" = "Address";
 "DETIALS.street" = "Street :";
 "DETIALS.city" = "City :";
 "DETIALS.state" = "State :";
 "DETIALS.posteCode" = "Postal code :";
+
+"DETAILS.sectionLogin" = "Credentials";
+"DETIALS.username" = "Username :";
+"DETIALS.password" = "Password :";
+"DETIALS.salt" = "Salt :";
+"DETIALS.md5" = "MD5 :";
+"DETIALS.sha1" = "SHA1 :";
+"DETIALS.sha256" = "SHA256 :";

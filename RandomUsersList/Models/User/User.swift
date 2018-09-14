@@ -18,6 +18,7 @@ struct User: Decodable {
 	let name: UserName
 	let location: UserLocation
 	let email: String
+	let login: UserLogin
 	let phone: String
 	let picture: UserPicture
 	let nationality: String
@@ -27,6 +28,7 @@ struct User: Decodable {
 		case name
 		case location
 		case email
+		case login
 		case phone
 		case picture
 		case nationality = "nat"

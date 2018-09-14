@@ -7,6 +7,15 @@
         <attribute name="street" attributeType="String" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserModel" inverseName="location" inverseEntity="UserModel" syncable="YES"/>
     </entity>
+    <entity name="UserLoginModel" representedClassName="UserLoginModel" syncable="YES">
+        <attribute name="md5" attributeType="String" syncable="YES"/>
+        <attribute name="password" attributeType="String" syncable="YES"/>
+        <attribute name="salt" attributeType="String" syncable="YES"/>
+        <attribute name="sha1" attributeType="String" syncable="YES"/>
+        <attribute name="sha256" attributeType="String" syncable="YES"/>
+        <attribute name="username" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserModel" inverseName="login" inverseEntity="UserModel" syncable="YES"/>
+    </entity>
     <entity name="UserModel" representedClassName=".UserModel" syncable="YES">
         <attribute name="email" attributeType="String" syncable="YES"/>
         <attribute name="gender" attributeType="String" syncable="YES"/>
@@ -14,6 +23,7 @@
         <attribute name="nationality" attributeType="String" syncable="YES"/>
         <attribute name="phone" attributeType="String" syncable="YES"/>
         <relationship name="location" maxCount="1" deletionRule="Cascade" destinationEntity="UserLocationModel" inverseName="user" inverseEntity="UserLocationModel" syncable="YES"/>
+        <relationship name="login" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="UserLoginModel" inverseName="user" inverseEntity="UserLoginModel" syncable="YES"/>
         <relationship name="name" maxCount="1" deletionRule="Cascade" destinationEntity="UserNameModel" inverseName="user" inverseEntity="UserNameModel" syncable="YES"/>
         <relationship name="picture" maxCount="1" deletionRule="Cascade" destinationEntity="UserPictureModel" inverseName="user" inverseEntity="UserPictureModel" syncable="YES"/>
         <uniquenessConstraints>
@@ -36,8 +46,9 @@
     </entity>
     <elements>
         <element name="UserLocationModel" positionX="-36" positionY="27" width="128" height="120"/>
-        <element name="UserModel" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="UserModel" positionX="-63" positionY="-18" width="128" height="180"/>
         <element name="UserNameModel" positionX="-54" positionY="18" width="128" height="105"/>
         <element name="UserPictureModel" positionX="-18" positionY="36" width="128" height="105"/>
+        <element name="UserLoginModel" positionX="-36" positionY="54" width="128" height="150"/>
     </elements>
 </model>
