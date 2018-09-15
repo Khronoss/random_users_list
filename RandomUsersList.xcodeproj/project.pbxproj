@@ -110,7 +110,6 @@
 		FA80681A2147E9730093CEB0 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		FA80681C2147E9AF0093CEB0 /* Localizator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizator.swift; sourceTree = "<group>"; };
 		FA8068212147EA030093CEB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		FA8068232147EA420093CEB0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FA8068242147EA420093CEB0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA8068252147EEE90093CEB0 /* LocalizableKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableKey.swift; sourceTree = "<group>"; };
 		FA8068272147F1810093CEB0 /* UserLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
@@ -741,7 +740,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				FAB3FA4C2146B3BD007B5C62 /* Base */,
-				FA8068232147EA420093CEB0 /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
