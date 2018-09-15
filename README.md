@@ -10,3 +10,4 @@ Touching an item of the list should make appear a details page listing every att
 The app must be in Swift, any third-party libraries are allowed but you'll have to justify why you use them.
 
 *Estimated time :* 2 working days (or 14 hours)
+*Real time :* 1 week of vacation days (meaning more or less around 3 working days, or 21 hours (...I think :| ))
