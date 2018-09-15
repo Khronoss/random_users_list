@@ -48,7 +48,7 @@ class UsersListDataLayerTests: XCTestCase {
 		
 		dataLayer.saveUsers(users, startingIdentifier: 0)
 		
-		let savedUsers = dataLayer.retrieveUsers(forPage: 0, countPerPage: 10)
+		let savedUsers = dataLayer.retrieveUsers(forPage: 1, countPerPage: 10)
 		
 		XCTAssertEqual(savedUsers.count, 2)
 		XCTAssertEqual(savedUsers[0].name.firstname, "First")
@@ -70,7 +70,7 @@ class UsersListDataLayerTests: XCTestCase {
 		
 		dataLayer.saveUsers(users, startingIdentifier: 0)
 
-		let savedUsers = dataLayer.retrieveUsers(forPage: 0, countPerPage: 10)
+		let savedUsers = dataLayer.retrieveUsers(forPage: 1, countPerPage: 10)
 		
 		XCTAssertEqual(savedUsers.count, 10)
 		XCTAssertEqual(savedUsers[0].name.firstname, "001")
@@ -94,7 +94,7 @@ class UsersListDataLayerTests: XCTestCase {
 		
 		dataLayer.saveUsers(users, startingIdentifier: 0)
 
-		let savedUsers = dataLayer.retrieveUsers(forPage: 1, countPerPage: 10)
+		let savedUsers = dataLayer.retrieveUsers(forPage: 2, countPerPage: 10)
 		
 		XCTAssertEqual(savedUsers.count, 10)
 		XCTAssertEqual(savedUsers[0].name.firstname, "011")

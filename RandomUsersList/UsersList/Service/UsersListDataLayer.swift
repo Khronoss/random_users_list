@@ -32,8 +32,8 @@ extension UsersListDataLayer: IUsersListDataLayer {
 				return []
 			}
 			
-			let maxIndex = min(((index + 1) * countPerPage), users.count)
-			let pageUsers = users[(index * countPerPage)..<maxIndex]
+			let maxIndex = min((index * countPerPage), users.count)
+			let pageUsers = users[((index - 1) * countPerPage)..<maxIndex]
 			
 			return pageUsers.map({ $0.toUser() })
 		} catch {

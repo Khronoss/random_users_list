@@ -36,14 +36,12 @@ class UsersListTableViewController: NSObject {
 	
 	var users: [User] = [] {
 		didSet {
-			isLoadingMoreUsers = false
 			tableView?.reloadData()
 		}
 	}
 	var userPictures: [String: UIImage] = [:]
 	
 	var delegate: IUsersListTableViewControllerDelegate?
-	var isLoadingMoreUsers: Bool = false
 	
 	func registerCells() {
 		tableView?.registerNibWithClass(cellClass: UserTableViewCell.self)
@@ -101,10 +99,8 @@ extension UsersListTableViewController: UITableViewDelegate {
 		let offsetY = scrollView.contentOffset.y
 		let contentHeight = scrollView.contentSize.height
 		
-		if offsetY > contentHeight - scrollView.frame.height,
-			!isLoadingMoreUsers {
+		if offsetY > contentHeight - (scrollView.frame.height * 1.2) {
 			print("UsersListTableViewController: Asking delegate to load more users")
-			isLoadingMoreUsers = true
 			delegate?.loadMoreUsers()
 		}
 	}

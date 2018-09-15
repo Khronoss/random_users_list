@@ -7,7 +7,7 @@
         <attribute name="street" attributeType="String" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserModel" inverseName="location" inverseEntity="UserModel" syncable="YES"/>
     </entity>
-    <entity name="UserLoginModel" representedClassName="UserLoginModel" syncable="YES">
+    <entity name="UserLoginModel" representedClassName=".UserLoginModel" syncable="YES">
         <attribute name="md5" attributeType="String" syncable="YES"/>
         <attribute name="password" attributeType="String" syncable="YES"/>
         <attribute name="salt" attributeType="String" syncable="YES"/>
@@ -46,9 +46,9 @@
     </entity>
     <elements>
         <element name="UserLocationModel" positionX="-36" positionY="27" width="128" height="120"/>
+        <element name="UserLoginModel" positionX="-36" positionY="54" width="128" height="150"/>
         <element name="UserModel" positionX="-63" positionY="-18" width="128" height="180"/>
         <element name="UserNameModel" positionX="-54" positionY="18" width="128" height="105"/>
         <element name="UserPictureModel" positionX="-18" positionY="36" width="128" height="105"/>
-        <element name="UserLoginModel" positionX="-36" positionY="54" width="128" height="150"/>
     </elements>
 </model>

@@ -18,6 +18,7 @@ class UsersListViewController: UIViewController {
 	var delegate: UserDetailsPresenter?
 	var currentPageIndex: Int = 0
 	let usersPerPage = 10
+	var canLoadMoreUsers = true
 	
 	required init(usersListService: IUsersListService,
 				  tableViewController: IUsersListTableViewController,
@@ -55,6 +56,7 @@ class UsersListViewController: UIViewController {
 	
 	func loadUsersList(pageIndex: Int) {
 		currentPageIndex = pageIndex
+		canLoadMoreUsers = false
 		
 		usersListService.getUsersList(forPage: currentPageIndex, countPerPage: usersPerPage) { (users, error) in
 			guard let usersList = users else {
@@ -64,6 +66,7 @@ class UsersListViewController: UIViewController {
 			}
 			
 			print("Loaded Users list")
+			self.canLoadMoreUsers = true
 			if pageIndex == 0 {
 				self.tableViewController.users = usersList
 			} else {
@@ -88,7 +91,9 @@ class UsersListViewController: UIViewController {
 
 extension UsersListViewController: IUsersListTableViewControllerDelegate {
 	func loadMoreUsers() {
-		loadUsersList(pageIndex: currentPageIndex + 1)
+		if canLoadMoreUsers {
+			loadUsersList(pageIndex: currentPageIndex + 1)
+		}
 	}
 	
 	func usersListController(_ controller: IUsersListTableViewController,
